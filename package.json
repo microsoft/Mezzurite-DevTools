@@ -1,0 +1,24 @@
+{
+  "name": "mezzurite-devtools",
+  "version": "0.1.0",
+  "description": "A Chrome DevTools extension for helping developers onboard onto and debug their Mezzurite setup",
+  "main": "src/main.js",
+  "dependencies": {
+    "chrome-launcher": "^0.10.5",
+    "adm-zip": "^0.4.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/Mezzurite-DevTools.git"
+  },
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Microsoft/Mezzurite-DevTools/issues"
+  },
+  "homepage": "https://github.com/Microsoft/Mezzurite-DevTools#readme"
+}
