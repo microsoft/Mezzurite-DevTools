@@ -2,8 +2,6 @@
 
 let isPanelCreated = false;
 
-console.log("Hello from the main.js! (global)");
-
 // Check if Mezzurite has loaded every second
 const intervalMs = 1000;
 const mezzuriteLoadCheckInterval = setInterval(
@@ -12,20 +10,34 @@ const mezzuriteLoadCheckInterval = setInterval(
 
 ////////////////////////////////
 
+function createPanel() {
+    const title = "Mezzurite";
+    const iconPath = null;
+    const pagePath = "panel.html";
+    chrome.devtools.panels.create(title, iconPath, pagePath, function(panel) {
+        console.log("The Mezzurite panel in DevTools was created!");
+    });
+}
+
+function getMezzuriteObject(callback) {
+    const expression = `window.mezzurite`;
+    chrome.devtools.inspectedWindow.eval(expression, callback);
+}
+
 function createPanelIfMezzuriteLoaded() {
     if (isPanelCreated) {
         return;
     }
 
-    clearInterval(mezzuriteLoadCheckInterval);
-    isPanelCreated = true;
-    
-    const title = "Mezzurite DevTools";
-    const iconPath = null;
-    const pagePath = "panel.html";
-    chrome.devtools.panels.create(title, iconPath, pagePath, function(panel) {
-        console.log("Hello from the panel creation callback in main.js!");
-        
-        console.log(window.mezzurite);
+    getMezzuriteObject((result, exceptionInfo) => {
+        if (result === undefined) {
+            return; // Mezzurite not found
+        }
+
+        // Stop checking for Mezzurite every second, as we have found it.
+        clearInterval(mezzuriteLoadCheckInterval);
+        isPanelCreated = true;
+
+        createPanel();
     });
 }
