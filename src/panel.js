@@ -22,6 +22,11 @@ function updateMezzuriteFoundStatus(text) {
     document.getElementById("mezzurite-found").innerHTML = text;
 }
 
+function updateMezzuriteFrameworkInformation(info) {
+    document.getElementById("mezzurite-package").innerHTML = "Mezzurite Package Name: " + info.name;
+    document.getElementById("mezzurite-version").innerHTML = "Mezzurite Package Version: " + info.version;
+}
+
 ////////////////////////////////
 
 /**
@@ -46,6 +51,8 @@ function listenForTimingEvents() {
         console.log(`DT: Got a message! ${message}, ${sender}, ${sendResponse}`);
 
         if (message.action === "timing") {
+            updateMezzuriteFrameworkInformation(message.payload.Framework);
+
             message.payload.Timings.forEach(timing => {
                 const item = document.createElement('li');
                 item.appendChild(document.createTextNode(timing.metricType + ", " + timing.value + ", " + timing.data))

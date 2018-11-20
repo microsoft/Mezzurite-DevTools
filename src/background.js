@@ -9,7 +9,7 @@ function onInstalled() {
         if (message.action === "bg_mountContentScript") {
             chrome.tabs.executeScript(message.tabId, {
                 file: 'content.js'
-            })
+            });
         }
     });
 }

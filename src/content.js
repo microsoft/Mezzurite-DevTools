@@ -2,6 +2,7 @@
 // It will have shared access to the DOM, but not global variables
 // like window. That is isolated. This is why we inject the 
 // additional script
+'use strict';
 
 document.addEventListener('MezzuriteTiming_toExtension', (timingEvent) => {
     // Forward the event to the Mezzurite DevTools panel
