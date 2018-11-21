@@ -4,7 +4,12 @@
 // additional script
 'use strict';
 
-document.addEventListener('MezzuriteTiming_toExtension', (timingEvent) => {
+document.addEventListener('MezzuriteTiming_toExtension', onTimingEvent);
+injectScript('injected.js');
+
+////////////////////////////////
+
+function onTimingEvent(timingEvent) {
     // Forward the event to the Mezzurite DevTools panel
     console.log(`CS: Got a timing event! ${timingEvent}`);
     console.log(timingEvent);
@@ -12,11 +17,7 @@ document.addEventListener('MezzuriteTiming_toExtension', (timingEvent) => {
         action: "timing",
         payload: timingEvent.detail
     });
-});
-
-injectScript('injected.js');
-
-////////////////////////////////
+}
 
 function injectScript(filepath) {
     const bodyTag = document.getElementsByTagName('body')[0];
