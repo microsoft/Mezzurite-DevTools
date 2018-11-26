@@ -18,10 +18,19 @@ getMezzuriteObject((result, exceptionInfo) => {
 
 ////////////////////////////////
 
+/**
+ * Insert provided text inside the tag with id:"mezzurite-found".
+ * @param {string} text - The text to be inserted
+ */
 function updateMezzuriteFoundStatus(text) {
     document.getElementById("mezzurite-found").innerHTML = text;
 }
 
+/**
+ * Updates the DevTools panel page to display the Mezzurite
+ * package name and version information.
+ * @param {Object} info - An object containing the `name` and `version` of Mezzurite present on the page.
+ */
 function updateMezzuriteFrameworkInformation(info) {
     document.getElementById("mezzurite-package").innerHTML = "Mezzurite Package Name: " + info.name;
     document.getElementById("mezzurite-version").innerHTML = "Mezzurite Package Version: " + info.version;
@@ -46,6 +55,10 @@ function getMezzuriteObject(callback) {
     chrome.devtools.inspectedWindow.eval(expression, callback);
 }
 
+/**
+ * Set up an event listener to grab Mezzurite timing events forwarded
+ * by the content script and display them to the user.
+ */
 function listenForTimingEvents() {
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         console.log(`DT: Got a message! ${message}, ${sender}, ${sendResponse}`);
@@ -62,6 +75,11 @@ function listenForTimingEvents() {
     });
 }
 
+/**
+ * Send a Chrome runtime message to the background script
+ * to instruct it to mount the content script into the
+ * inspected page.
+ */
 function tellBackgroundToMountContentScript() {
     chrome.runtime.sendMessage({
         action: "bg_mountContentScript",
