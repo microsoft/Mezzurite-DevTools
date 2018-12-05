@@ -2,14 +2,26 @@
   "name": "mezzurite-devtools",
   "version": "0.1.0",
   "description": "A Chrome DevTools extension for helping developers onboard onto and debug their Mezzurite setup",
-  "main": "src/main.js",
+  "main": "index.js",
   "dependencies": {
-    "chrome-launcher": "^0.10.5",
-    "adm-zip": "^0.4.11"
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.8"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:chrome": "webpack --config ./chrome/webpack.config.js --mode development"
   },
   "repository": {
     "type": "git",
