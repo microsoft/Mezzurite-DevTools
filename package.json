@@ -4,8 +4,10 @@
   "description": "A Chrome DevTools extension for helping developers onboard onto and debug their Mezzurite setup",
   "main": "index.js",
   "dependencies": {
+    "@material-ui/core": "^3.7.1",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
@@ -15,6 +17,11 @@
     "babel-loader": "^8.0.2",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
