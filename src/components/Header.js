@@ -13,7 +13,6 @@ class Header extends Component {
     render() {
         return (
             <header className="Header">
-                <img src='./icon.png'></img>
                 <h1>Mezzurite Developer Tools</h1>
             </header>
         );

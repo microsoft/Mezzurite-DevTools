@@ -15,7 +15,7 @@ function onInstalled() {
 
         if (message.action === "bg_mountContentScript") {
             chrome.tabs.executeScript(message.tabId, {
-                file: 'content.js'
+                file: 'content.bundle.js' // Relative path is apparently determined from the manifest.json's position
             });
         }
     });
