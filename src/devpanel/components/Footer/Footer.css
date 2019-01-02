@@ -1,0 +1,7 @@
+.Footer {
+    /* height: 50px; */
+    background-color: #363b44;
+    color: #f9bb10;
+    flex-shrink: 0;
+    padding: 10px;
+}
