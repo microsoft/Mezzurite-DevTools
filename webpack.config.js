@@ -1,15 +1,16 @@
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: __dirname,
   entry: {
-    background: './src/extension/background.js',
-    devpanel: './src/index.js',
-    devtools: './src/extension/main.js',
-    content: './src/extension/content.js',
-    inject: './src/extension/injected.js'
+    background: './src/background/index.js',
+    devpanel: './src/devpanel/index.js',
+    devtools: './src/devtools/index.js',
+    content: './src/inject/content.js',
+    inject: './src/inject/injected.js'
   },
   mode: "development",
   module: {
@@ -32,12 +33,13 @@ module.exports = {
     filename: "[name].bundle.js"
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new CopyWebpackPlugin([
       { from: './src/manifest.json', to: 'manifest.json'},
       { from: './res/img', to: 'img'}
     ], {}),
     new HtmlWebpackPlugin({
-      template: './src/extension/devpanel/template.html',
+      template: './src/devpanel/template.html',
       chunks: ['devpanel'],
       filename: 'devpanel.html'
     }),
