@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
-import MezzuriteInspector from '../MezzuriteInspector.js';
+import Container from './Container.js';
+import MezzuriteInspector from '../services/MezzuriteInspector.js';
 
 class MezzuriteInfo extends Component {
     constructor(props) {
@@ -26,8 +26,8 @@ class MezzuriteInfo extends Component {
 
             MezzuriteInspector.listenForTimingEvents(event => {
                 this.setState({ 
-                    mezzuritePackage: `Mezzurite Package Name: ${event.Framework.name}`,
-                    mezzuriteVersion: `Mezzurite Package Version: ${event.Framework.version}`
+                    mezzuritePackage: event.Framework.name,
+                    mezzuriteVersion: event.Framework.version
                 });
 
                 this.setState({
@@ -50,12 +50,19 @@ class MezzuriteInfo extends Component {
         );
         return (
             <div className="MezzuriteInfo">
-                <div id="mezzurite-found">{this.state.mezzuriteFoundMessage}</div>
-                <div id="mezzurite-package">{this.state.mezzuritePackage}</div>
-                <div id="mezzurite-version">{this.state.mezzuriteVersion}</div>
-                <ul id="timings">
-                    {timingItems}
-                </ul>
+                <Container title="Mezzurite Framework Details">
+                    <div id="mezzurite-package">
+                        <span>Mezzurite Package Name: </span>{this.state.mezzuritePackage}
+                    </div>
+                    <div id="mezzurite-version">
+                        <span>Mezzurite Package Version: </span>{this.state.mezzuriteVersion}
+                    </div>
+                </Container>
+                <Container title="Mezzurite Timings">
+                    <ul id="timings">
+                        {timingItems}
+                    </ul>
+                </Container>
             </div>
         );
     }

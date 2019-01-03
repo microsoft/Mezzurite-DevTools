@@ -1,8 +1,3 @@
-
-const agent = {
-
-};
-
 /**
  * This is a callback function signature for handling the response that
  * is asynchronously returned by `chrome.devtools.inspectedWindow.eval()`.
