@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Main.css'
-import MezzuriteInfo from './MezzuriteInfo.js';
+import MezzuriteInfo from '../MezzuriteInfo/MezzuriteInfo.js';
 
 class Main extends Component {
 
