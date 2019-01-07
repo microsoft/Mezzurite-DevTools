@@ -1,0 +1,18 @@
+.Footer {
+    /* height: 50px; */
+    display: flex;
+    background-color: #363b44;
+    color: #f9bb10;
+    flex-shrink: 0;
+    padding: 10px;
+    align-items: center;
+}
+
+.Footer span {
+    padding-left: 10px;
+}
+
+#gh-logo {
+    width: 16px;
+    height: 16px;
+}

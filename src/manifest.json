@@ -6,10 +6,10 @@
     "version": "0.1.0",
     "minimum_chrome_version": "10.0",
     "background": {
-        "scripts": ["background.js"],
+        "scripts": ["background.bundle.js"],
         "persistent": false
     },
-    "devtools_page": "main.html",
+    "devtools_page": "devtools.html",
     "permissions": [
         "activeTab",
         "tabs",
@@ -19,6 +19,18 @@
     ],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
     "web_accessible_resources": [
-        "injected.js"
-    ]
+        "inject.bundle.js"
+    ],
+    "browser_action": {
+        "default_icon": {
+            "16": "img/icon16.png",
+            "24": "img/icon24.png",
+            "32": "img/icon32.png"
+        }
+    },
+    "icons": {
+        "16": "img/icon16.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    }
 }

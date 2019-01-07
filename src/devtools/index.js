@@ -16,7 +16,7 @@ const mezzuriteLoadCheckInterval = setInterval(
 function createPanel() {
     const title = "Mezzurite";
     const iconPath = null;
-    const pagePath = "panel.html";
+    const pagePath = "devpanel.html"; // Relative path is apparently determined from the manifest.json's position
     chrome.devtools.panels.create(title, iconPath, pagePath, function(panel) {
         console.log("The Mezzurite panel in DevTools was created!");
     });

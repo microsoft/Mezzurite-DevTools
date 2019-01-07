@@ -5,7 +5,7 @@
 'use strict';
 
 document.addEventListener('MezzuriteTiming_toExtension', onTimingEvent);
-injectScript('injected.js');
+injectScript('inject.bundle.js'); // Relative path is apparently determined from the manifest.json's position
 
 ////////////////////////////////
 

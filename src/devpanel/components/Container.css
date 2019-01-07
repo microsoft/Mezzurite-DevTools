@@ -1,0 +1,13 @@
+.Container {
+    background-color: #363b44;
+    color: #fffffa;
+    padding: 10px;
+    margin: 10px;
+}
+
+.Container .title {
+    color: #f9bb10;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+}
