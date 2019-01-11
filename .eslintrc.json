@@ -1,0 +1,8 @@
+{
+  "env": {
+    "browser": true,
+    "webextensions": true
+  },
+  "extends": "semistandard-react",
+  "parser": "babel-eslint"
+}
