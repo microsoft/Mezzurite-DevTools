@@ -3,6 +3,9 @@
     "browser": true,
     "webextensions": true
   },
-  "extends": "semistandard-react",
-  "parser": "babel-eslint"
+  "extends": [ "standard", "standard-react" ],
+  "parser": "babel-eslint",
+  "rules": {
+    "semi": "off"
+  }
 }
