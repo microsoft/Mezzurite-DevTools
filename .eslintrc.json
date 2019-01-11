@@ -6,6 +6,6 @@
   "extends": [ "standard", "standard-react" ],
   "parser": "babel-eslint",
   "rules": {
-    "semi": [ "always", "error" ]
+    "semi": [ "error", "always" ]
   }
 }
