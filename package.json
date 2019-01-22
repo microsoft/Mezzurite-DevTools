@@ -4,8 +4,6 @@
   "description": "A Chrome DevTools extension for helping developers onboard onto and debug their Mezzurite setup",
   "main": "index.js",
   "dependencies": {
-    "@material-ui/core": "^3.7.1",
-    "@material-ui/icons": "^3.0.1",
     "normalize.css": "^8.0.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -33,12 +31,16 @@
     "html-webpack-plugin": "^3.2.0",
     "prop-types": "^15.6.2",
     "style-loader": "^0.23.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1"
   },
   "scripts": {
     "build": "webpack --config ./webpack.config.js --mode development",
-    "lint": "eslint ./src"
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "stylelint \"./src/devpanel/**/*.css\"",
+    "lint:js": "eslint ./src"
   },
   "repository": {
     "type": "git",
