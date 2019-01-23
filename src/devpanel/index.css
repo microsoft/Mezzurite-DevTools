@@ -1,13 +1,26 @@
-html,
-body {
+:root {
+  --microsoft-black: #000;
+  --microsoft-gray-darkest: #505050;
+  --microsoft-gray-darker: #737373;
+  --microsoft-gray-lighter: #d2d2d2;
+  --microsoft-gray-lightest: #e6e6e6;
+  --microsoft-white: #fff;
+  --microsoft-blue: #0078d7;
+
+  background-color: var(--microsoft-gray-lightest);
+  color: var(--microsoft-gray-darkest);
+  font-family: "Segoe UI", "SegoeUI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100%;
-  margin: 0;
 }
 
-body {
-  background-color: #484c55;
+@media only screen and (max-width: 539px) {
+  .mobile-hidden {
+    display: none;
+  }
 }
 
-#root {
-  height: 100%;
+@media only screen and (max-width: 768px) {
+  .tablet-hidden {
+    display: none;
+  }
 }
