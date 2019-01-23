@@ -35,7 +35,7 @@ function createPanel () {
  * @param {evalCallback} callback - The callback that handles the response.
  */
 function checkMezzurite (callback) {
-  const expression = `!!window.mezzurite`;
+  const expression = `window.mezzurite != null`;
   chrome.devtools.inspectedWindow.eval(expression, callback);
 }
 
