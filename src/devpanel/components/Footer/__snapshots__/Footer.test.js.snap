@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer.js should render the footer 1`] = `
+<footer
+  className="Footer"
+>
+  <a
+    href="https://github.com/Microsoft/Mezzurite-DevTools"
+    target="_blank"
+  >
+    <img
+      id="gh-logo"
+      src="test-file-stub"
+    />
+  </a>
+  <span>
+    Visit us on GitHub! ~ The Mezzurite Development Team
+  </span>
+</footer>
+`;
