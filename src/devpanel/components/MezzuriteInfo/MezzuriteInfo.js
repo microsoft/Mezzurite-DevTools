@@ -15,11 +15,11 @@ class MezzuriteInfo extends Component {
   }
 
   componentDidMount () {
-    MezzuriteInspector.getMezzuriteObjectAsync().then(value => {
+    MezzuriteInspector.isMezzuritePresentAsync().then(found => {
       const strNotFound = 'Mezzurite has not been detected on this page';
       const strFound = 'Mezzurite has been detected on this page';
 
-      if (value === undefined) {
+      if (found) {
         this.setState({ mezzuriteFoundMessage: strNotFound });
       } else {
         this.setState({ mezzuriteFoundMessage: strFound });

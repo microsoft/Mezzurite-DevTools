@@ -1,6 +1,6 @@
 class MezzuriteInspector {
-  static getMezzuriteObjectAsync () {
-    const expression = `window.mezzurite`;
+  static isMezzuritePresentAsync () {
+    const expression = `!!window.mezzurite`;
     return new Promise(function (resolve, reject) {
       chrome.devtools.inspectedWindow.eval(expression, (result, exceptionInfo) => {
         if (exceptionInfo !== undefined) {

@@ -31,11 +31,11 @@ function createPanel () {
  */
 
 /**
- * Attempts to get the `window.mezzurite` object from the inspected window.
+ * Attempts to verify if the object: `window.mezzurite` exists in the inspected window.
  * @param {evalCallback} callback - The callback that handles the response.
  */
-function getMezzuriteObject (callback) {
-  const expression = `window.mezzurite`;
+function checkMezzurite (callback) {
+  const expression = `!!window.mezzurite`;
   chrome.devtools.inspectedWindow.eval(expression, callback);
 }
 
@@ -48,9 +48,9 @@ function createPanelIfMezzuriteLoaded () {
     return;
   }
 
-  getMezzuriteObject((result, exceptionInfo) => {
-    if (result === undefined) {
-      return; // Mezzurite not found
+  checkMezzurite((found, exceptionInfo) => {
+    if (!found) {
+      return;
     }
 
     console.log('Mezzurite was found!');
