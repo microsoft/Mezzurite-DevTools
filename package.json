@@ -4,6 +4,7 @@
   "description": "A Chrome DevTools extension for helping developers onboard onto and debug their Mezzurite setup",
   "main": "index.js",
   "dependencies": {
+    "css-vars-ponyfill": "^1.16.2",
     "normalize.css": "^8.0.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
