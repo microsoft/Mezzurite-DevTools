@@ -1,22 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+
 import './Header.css';
 
-class Header extends Component {
-  componentDidMount () {
-
-  }
-
-  componentWillUnMount () {
-
-  }
-
-  render () {
-    return (
-      <header className='Header'>
-        <h1>Mezzurite Developer Tools</h1>
-      </header>
-    );
-  }
-}
+const Header = () => (
+  <header className='header' role='banner'>
+    <h1 className='header--text'>Mezzurite Developer Tools</h1>
+  </header>
+);
 
 export default Header;

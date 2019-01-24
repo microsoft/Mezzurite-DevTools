@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header.js should render the header 1`] = `
+<header
+  className="header"
+>
+  <h1
+    className="header--text"
+  >
+    Mezzurite Developer Tools
+  </h1>
+</header>
+`;
