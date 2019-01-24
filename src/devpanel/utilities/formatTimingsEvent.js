@@ -8,13 +8,20 @@ function formatTimingsEvent (event) {
   let componentTimings = null;
 
   if (event.Timings != null && Array.isArray(event.Timings)) {
-    const findAlt = event.Timings.filter((timing) => timing != null).find((timing) => timing.metricType === 'ALT');
+    let findAlt = null;
+
+    event.Timings.filter((timing) => timing != null).forEach((timing) => {
+      if (timing.metricType === 'ALT') {
+        findAlt = timing;
+      } else if (timing.metricType === 'AllComponents') {
+        allComponentData = timing;
+      }
+    });
 
     if (findAlt != null) {
       alt = findAlt.value;
     }
 
-    allComponentData = event.Timings.filter((timing) => timing != null).find((timing) => timing.metricType === 'AllComponents');
     componentTimings = null;
 
     if (allComponentData != null && allComponentData.data != null) {
