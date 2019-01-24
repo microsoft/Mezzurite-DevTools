@@ -1,0 +1,34 @@
+@media only screen {
+  .capture-cycle--card {
+    --box-shadow: 4px 2px 16px -2px rgba(0, 0, 0, 0.4);
+
+    background-color: white;
+    border-top: 4px solid var(--microsoft-blue);
+    border-radius: 4px;
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
+    margin: 0 16px 12px;
+  }
+
+  .capture-cycle--components {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px;
+  }
+
+  .capture-cycle--timestamp {
+    background-color: var(--microsoft-gray-lighter);
+    border-bottom: 1px solid var(--microsoft-gray-darker);
+    font-weight: 400;
+    margin: 0;
+    padding: 8px 16px;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .capture-cycle--timestamp {
+    text-align: start;
+  }
+}
