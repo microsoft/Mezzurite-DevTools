@@ -3,6 +3,7 @@
 exports[`Header.js should render the header 1`] = `
 <header
   className="header"
+  role="banner"
 >
   <h1
     className="header--text"
