@@ -1,10 +1,19 @@
-.Header {
-  background-color: #363b44;
-  color: #f9bb10;
-  padding: 10px;
+@media only screen {
+  .header {
+    background-color: var(--microsoft-gray-darkest);
+    color: var(--microsoft-white);
+    padding: 10px;
+  }
+
+  .header--text {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
 }
 
-.Header h1 {
-  margin: 0;
-  padding: 0;
+@media only screen and (min-width: 540px) {
+  .header--text {
+    text-align: start;
+  }
 }
