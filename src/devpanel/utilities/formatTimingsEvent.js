@@ -10,11 +10,13 @@ function formatTimingsEvent (event) {
   if (event.Timings != null && Array.isArray(event.Timings)) {
     let findAlt = null;
 
-    event.Timings.filter((timing) => timing != null).forEach((timing) => {
-      if (timing.metricType === 'ALT') {
-        findAlt = timing;
-      } else if (timing.metricType === 'AllComponents') {
-        allComponentData = timing;
+    event.Timings.forEach((timing) => {
+      if (timing != null) {
+        if (timing.metricType === 'ALT') {
+          findAlt = timing;
+        } else if (timing.metricType === 'AllComponents') {
+          allComponentData = timing;
+        }
       }
     });
 
