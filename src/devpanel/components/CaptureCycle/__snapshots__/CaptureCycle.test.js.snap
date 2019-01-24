@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CaptureCycle.test.js should not error out when there is no captureCycleIndex 1`] = `
+<section
+  className="capture-cycle--card"
+>
+  <h2
+    className="capture-cycle--timestamp"
+  >
+    Capture Cycle
+    <span>
+       at 
+      2019-02-23T08:00:00.000Z
+      :
+    </span>
+  </h2>
+  <ul
+    className="capture-cycle--components"
+  >
+    <ComponentTiming
+      loadTime={9.2}
+      name="componentName"
+    />
+  </ul>
+</section>
+`;
+
+exports[`CaptureCycle.test.js should not error out when there is no timestamp 1`] = `
+<section
+  className="capture-cycle--card"
+>
+  <h2
+    className="capture-cycle--timestamp"
+  >
+    Capture Cycle
+  </h2>
+  <ul
+    className="capture-cycle--components"
+  >
+    <ComponentTiming
+      loadTime={9.2}
+      name="componentName"
+    />
+  </ul>
+</section>
+`;
+
+exports[`CaptureCycle.test.js should render the capture cycle 1`] = `
+<section
+  className="capture-cycle--card"
+>
+  <h2
+    className="capture-cycle--timestamp"
+  >
+    Capture Cycle
+    <span>
+       at 
+      2019-02-23T08:00:00.000Z
+      :
+    </span>
+  </h2>
+  <ul
+    className="capture-cycle--components"
+  >
+    <ComponentTiming
+      loadTime={9.2}
+      name="componentName"
+    />
+  </ul>
+</section>
+`;
