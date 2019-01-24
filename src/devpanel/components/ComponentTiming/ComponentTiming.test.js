@@ -1,23 +1,38 @@
+import React from 'react';
+import ShallowRenderer from 'react-test-renderer/shallow';
+
 import ComponentTiming from './ComponentTiming';
 
 describe('ComponentTiming.js', () => {
+  const renderer = new ShallowRenderer();
+
   it('should not render when the props are null', () => {
-    expect(ComponentTiming(null)).toBeFalsy();
+    const tree = renderer
+      .render(<ComponentTiming />);
+    expect(tree).toBeFalsy();
   });
 
   it('should not render when the name and loadTime are null', () => {
-    expect(ComponentTiming({ loadTime: null, name: null })).toBeFalsy();
+    const tree = renderer
+      .render(<ComponentTiming loadTime={null} name={null} />);
+    expect(tree).toBeFalsy();
   });
 
   it('should render the componentTiming with only a name', () => {
-    expect(ComponentTiming({ name: 'ComponentName' })).toMatchSnapshot();
+    const tree = renderer
+      .render(<ComponentTiming name='ComponentName' />);
+    expect(tree).toMatchSnapshot();
   });
 
   it('should render the componentTiming with only a loadTime', () => {
-    expect(ComponentTiming({ loadTime: 14.2 })).toMatchSnapshot();
+    const tree = renderer
+      .render(<ComponentTiming loadTime={14.2} />);
+    expect(tree).toMatchSnapshot();
   });
 
   it('should render the componentTiming', () => {
-    expect(ComponentTiming({ loadTime: 14.2, name: 'ComponentName' })).toMatchSnapshot();
+    const tree = renderer
+      .render(<ComponentTiming loadTime={14.2} name='ComponentName' />);
+    expect(tree).toMatchSnapshot();
   });
 });

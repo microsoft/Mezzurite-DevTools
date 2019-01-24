@@ -3,7 +3,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 
 import CaptureCycle from './CaptureCycle';
 
-describe('CaptureCycle.test.js', () => {
+describe('CaptureCycle.js', () => {
   const renderer = new ShallowRenderer();
 
   it('should not render when the props are null', () => {
