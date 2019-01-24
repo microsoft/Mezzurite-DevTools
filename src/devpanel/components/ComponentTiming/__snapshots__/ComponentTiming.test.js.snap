@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComponentTiming.js should render the componentTiming 1`] = `
+<li
+  className="component-timing--card"
+>
+  <h3>
+    ComponentName
+  </h3>
+  <p>
+    Time to load: 
+    14.2
+     ms
+  </p>
+</li>
+`;
+
+exports[`ComponentTiming.js should render the componentTiming with only a loadTime 1`] = `
+<li
+  className="component-timing--card"
+>
+  <p>
+    Time to load: 
+    14.2
+     ms
+  </p>
+</li>
+`;
+
+exports[`ComponentTiming.js should render the componentTiming with only a name 1`] = `
+<li
+  className="component-timing--card"
+>
+  <h3>
+    ComponentName
+  </h3>
+</li>
+`;

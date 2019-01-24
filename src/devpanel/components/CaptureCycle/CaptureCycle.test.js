@@ -20,4 +20,8 @@ describe('CaptureCycle.test.js', () => {
   it('should not error out when there is no captureCycleIndex', () => {
     expect(CaptureCycle({ timestamp: new Date(2019, 1, 23), timings: [ { componentLoadTime: 9.2, componentName: 'componentName' } ] })).toMatchSnapshot();
   });
+
+  it('should render the capture cycle', () => {
+    expect(CaptureCycle({ captureCycleIndex: 0, timestamp: new Date(2019, 1, 23), timings: [ { componentLoadTime: 9.2, componentName: 'componentName' } ] })).toMatchSnapshot();
+  });
 });

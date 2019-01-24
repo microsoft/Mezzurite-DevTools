@@ -1,0 +1,19 @@
+@media only screen {
+  .component-timing--card {
+    background-color: var(--microsoft-blue);
+    border-radius: 4px;
+    color: var(--microsoft-white);
+    margin-bottom: 8px;
+    padding: 0 8px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .component-timing--card {
+    margin-bottom: 16px;
+    margin-right: 2px;
+    max-width: 200px;
+  }
+}
