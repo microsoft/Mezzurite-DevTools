@@ -22,6 +22,7 @@ function formatTimingsEvent (event) {
         allComponentData = JSON.parse(allComponentData.data);
       } catch (e) {
         allComponentData = null;
+        console.warn('The data provided by Mezzurite could not be parsed.');
       }
 
       if (allComponentData != null && Array.isArray(allComponentData)) {

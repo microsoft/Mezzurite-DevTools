@@ -103,6 +103,7 @@ describe('formatTimingsEvent.js', () => {
     });
 
     it('should return null for the componentTimings when the data cannot be parsed', () => {
+      const warnSpy = jest.spyOn(console, 'warn');
       expect(formatTimingsEvent({
         Timings: [
           {
@@ -111,6 +112,7 @@ describe('formatTimingsEvent.js', () => {
           }
         ]
       }).componentTimings).toBeNull();
+      expect(warnSpy).toHaveBeenCalledWith('The data provided by Mezzurite could not be parsed.');
     });
 
     it('should return null for the componentTimings when the data is valid JSON but in the wrong format', () => {
