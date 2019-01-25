@@ -14,7 +14,9 @@
   .capture-cycle--components {
     display: flex;
     flex-wrap: wrap;
+    list-style-type: none;
     margin: 16px;
+    padding: 0;
   }
 
   .capture-cycle--timestamp {

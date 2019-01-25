@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CaptureCycle.test.js should not error out when there is no captureCycleIndex 1`] = `
+exports[`CaptureCycle.js should not error out when there is no captureCycleIndex 1`] = `
 <section
   className="capture-cycle--card"
 >
@@ -10,7 +10,7 @@ exports[`CaptureCycle.test.js should not error out when there is no captureCycle
     Capture Cycle
     <span>
        at 
-      2019-02-23T08:00:00.000Z
+      12:00:00 AM
       :
     </span>
   </h2>
@@ -25,7 +25,7 @@ exports[`CaptureCycle.test.js should not error out when there is no captureCycle
 </section>
 `;
 
-exports[`CaptureCycle.test.js should not error out when there is no timestamp 1`] = `
+exports[`CaptureCycle.js should not error out when there is no timestamp 1`] = `
 <section
   className="capture-cycle--card"
 >
@@ -45,7 +45,7 @@ exports[`CaptureCycle.test.js should not error out when there is no timestamp 1`
 </section>
 `;
 
-exports[`CaptureCycle.test.js should render the capture cycle 1`] = `
+exports[`CaptureCycle.js should render the capture cycle 1`] = `
 <section
   className="capture-cycle--card"
 >
@@ -55,7 +55,7 @@ exports[`CaptureCycle.test.js should render the capture cycle 1`] = `
     Capture Cycle
     <span>
        at 
-      2019-02-23T08:00:00.000Z
+      12:00:00 AM
       :
     </span>
   </h2>
