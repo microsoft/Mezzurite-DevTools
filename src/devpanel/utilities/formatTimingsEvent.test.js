@@ -9,42 +9,42 @@ describe('formatTimingsEvent.js', () => {
     expect(formatTimingsEvent(undefined)).toBeNull();
   });
 
-  describe('alt', () => {
-    it('should return null for the alt when the Timings property is null', () => {
-      expect(formatTimingsEvent({ Timings: null }).alt).toBeNull();
+  describe('applicationLoadTime', () => {
+    it('should return null for the applicationLoadTime when the Timings property is null', () => {
+      expect(formatTimingsEvent({ Timings: null }).applicationLoadTime).toBeNull();
     });
 
-    it('should return null for the alt when the Timings property is undefined', () => {
-      expect(formatTimingsEvent({ Timings: undefined }).alt).toBeNull();
+    it('should return null for the applicationLoadTime when the Timings property is undefined', () => {
+      expect(formatTimingsEvent({ Timings: undefined }).applicationLoadTime).toBeNull();
     });
 
-    it('should return null for the alt when the Timings property is not an array', () => {
-      expect(formatTimingsEvent({ Timings: 1 }).alt).toBeNull();
+    it('should return null for the applicationLoadTime when the Timings property is not an array', () => {
+      expect(formatTimingsEvent({ Timings: 1 }).applicationLoadTime).toBeNull();
     });
 
-    it('should return null for the alt when the Timings array is empty', () => {
-      expect(formatTimingsEvent({ Timings: [] }).alt).toBeNull();
+    it('should return null for the applicationLoadTime when the Timings array is empty', () => {
+      expect(formatTimingsEvent({ Timings: [] }).applicationLoadTime).toBeNull();
     });
 
-    it('should return null for the alt when the Timings array has a null value', () => {
-      expect(formatTimingsEvent({ Timings: [ null ] }).alt).toBeNull();
+    it('should return null for the applicationLoadTime when the Timings array has a null value', () => {
+      expect(formatTimingsEvent({ Timings: [ null ] }).applicationLoadTime).toBeNull();
     });
 
-    it('should return null for the alt when the Timings array has an undefined value', () => {
-      expect(formatTimingsEvent({ Timings: [ undefined ] }).alt).toBeNull();
+    it('should return null for the applicationLoadTime when the Timings array has an undefined value', () => {
+      expect(formatTimingsEvent({ Timings: [ undefined ] }).applicationLoadTime).toBeNull();
     });
 
-    it('should return null for the alt when there is no timing with ALT as the metricType', () => {
+    it('should return null for the applicationLoadTime when there is no timing with ALT as the metricType', () => {
       expect(formatTimingsEvent({
         Timings: [
           {
             metricType: 'test'
           }
         ]
-      }).alt).toBeNull();
+      }).applicationLoadTime).toBeNull();
     });
 
-    it('should return the alt from the Timings object', () => {
+    it('should return the applicationLoadTime from the Timings object', () => {
       expect(formatTimingsEvent({
         Timings: [
           {
@@ -52,7 +52,7 @@ describe('formatTimingsEvent.js', () => {
             value: 13.2
           }
         ]
-      }).alt).toBe(13.2);
+      }).applicationLoadTime).toBe(13.2);
     });
   });
 

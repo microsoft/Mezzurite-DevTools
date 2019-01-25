@@ -3,25 +3,25 @@ function formatTimingsEvent (event) {
     return null;
   }
 
-  let alt = null;
+  let applicationLoadTime = null;
   let allComponentData = null;
   let componentTimings = null;
 
   if (event.Timings != null && Array.isArray(event.Timings)) {
-    let findAlt = null;
+    let findApplicationLoadTime = null;
 
     event.Timings.forEach((timing) => {
       if (timing != null) {
         if (timing.metricType === 'ALT') {
-          findAlt = timing;
+          findApplicationLoadTime = timing;
         } else if (timing.metricType === 'AllComponents') {
           allComponentData = timing;
         }
       }
     });
 
-    if (findAlt != null) {
-      alt = findAlt.value;
+    if (findApplicationLoadTime != null) {
+      applicationLoadTime = findApplicationLoadTime.value;
     }
 
     componentTimings = null;
@@ -65,7 +65,7 @@ function formatTimingsEvent (event) {
   const time = new Date().toLocaleTimeString();
 
   return {
-    alt,
+    applicationLoadTime,
     componentTimings,
     framework,
     time
