@@ -6,6 +6,7 @@
   --microsoft-gray-lightest: #e6e6e6;
   --microsoft-white: #fff;
   --microsoft-blue: #0078d7;
+  --microsoft-orange: #d83b01;
 
   background-color: var(--microsoft-gray-lightest);
   color: var(--microsoft-gray-darkest);
