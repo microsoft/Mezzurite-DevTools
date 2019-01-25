@@ -1,18 +1,91 @@
-.Footer {
-  /* height: 50px; */
-  display: flex;
-  background-color: #363b44;
-  color: #f9bb10;
-  flex-shrink: 0;
-  padding: 10px;
-  align-items: center;
+@media only screen {
+  .footer--content {
+    align-items: center;
+    background-color: var(--microsoft-gray-darker);
+    color: var(--microsoft-white);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .github-information {
+    padding: 8px 0 4px;
+  }
+
+  .github-information--link,
+  .github-information--package {
+    align-items: center;
+    color: var(--microsoft-white);
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+  }
+
+  .github-information--text {
+    margin-left: 8px;
+  }
+
+  .github-information--package:active,
+  .github-information--package:hover,
+  .github-information--text:active,
+  .github-information--text:hover {
+    color: var(--microsoft-gray-lighter);
+    text-decoration: underline;
+  }
+
+  .package-information {
+    display: block;
+    margin-right: 8px;
+  }
+
+  .package-information--container {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .package-information--label {
+    font-weight: 700;
+    margin-right: 4px;
+  }
+
+  li.package-information--name {
+    display: flex;
+  }
+
+  li.package-information--name,
+  li.package-information--version {
+    padding: 8px 0 8px;
+    text-align: center;
+  }
+
+  svg {
+    height: 24px;
+    width: 24px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
-.Footer span {
-  padding-left: 10px;
-}
+@media only screen and (min-width: 540px) {
+  .footer--content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-#gh-logo {
-  width: 16px;
-  height: 16px;
+  .github-information {
+    margin-left: 8px;
+    padding-bottom: 8px;
+  }
+
+  .package-information--container {
+    flex-direction: row;
+  }
+
+  .package-information--name {
+    margin-right: 12px;
+  }
 }
