@@ -1,4 +1,17 @@
-.Main {
-  flex: 1;
-  overflow: auto;
+@media only screen {
+  .main {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .main--header {
+    margin: 16px;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .main--header {
+    text-align: start;
+  }
 }
