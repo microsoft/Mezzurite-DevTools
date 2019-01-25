@@ -11,7 +11,7 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      alt: null,
+      applicationLoadTime: null,
       captureCycles: null,
       framework: {
         name: null,
@@ -25,8 +25,8 @@ class App extends Component {
       MezzuriteInspector.listenForTimingEvents(event => {
         const formattedTimings = formatTimingsEvent(event);
 
-        if (formattedTimings.alt != null) {
-          this.setState({ alt: formattedTimings.alt });
+        if (formattedTimings.applicationLoadTime != null) {
+          this.setState({ applicationLoadTime: formattedTimings.applicationLoadTime });
         }
 
         if (formattedTimings.componentTimings != null && formattedTimings.componentTimings !== []) {
@@ -56,7 +56,7 @@ class App extends Component {
     return (
       <div className='app'>
         <Header />
-        <Main applicationLoadTime={this.state.alt} captureCycles={this.state.captureCycles} />
+        <Main applicationLoadTime={this.state.applicationLoadTime} captureCycles={this.state.captureCycles} />
         <Footer packageName={this.state.framework.name} packageVersion={this.state.framework.version} />
       </div>
     );
