@@ -5,7 +5,7 @@ import './Main.css';
 import CaptureCycle from '../CaptureCycle/CaptureCycle';
 
 const Main = (props) => {
-  const showCaptureCycles = props.captureCycles != null && (props.captureCycles == null || props.captureCycles.length === 0) && props.applicationLoadTime != null;
+  const noActiveCaptureCycles = props.captureCycles != null && props.captureCycles.length === 0 && props.applicationLoadTime != null;
 
   return (
     props != null && <main className='main'>
@@ -13,15 +13,19 @@ const Main = (props) => {
         <h2 className='main--header'>Mezzurite is working...</h2>
       }
       {props.applicationLoadTime != null && <h2 className='main--header'>App<span className='mobile-hidden'>lication</span> Load Time: {props.applicationLoadTime} ms</h2>}
-      {props.captureCycles != null && props.captureCycles.length > 0 && props.captureCycles.filter((captureCycle) => captureCycle != null).map((captureCycle, captureCycleIndex) =>
-        <CaptureCycle
-          captureCycleIndex={captureCycleIndex}
-          key={`capture-cycle-${captureCycleIndex}`}
-          timestamp={captureCycle.time}
-          timings={captureCycle.componentTimings}
-        />
-      )}
-      {showCaptureCycles && <h3>No active capture cycles have completed.</h3>}
+      {props.captureCycles != null && props.captureCycles.length > 0 && props.captureCycles.map((captureCycle, captureCycleIndex) => {
+        if (captureCycle != null) {
+          return (
+            <CaptureCycle
+              captureCycleIndex={captureCycleIndex}
+              key={`capture-cycle-${captureCycleIndex}`}
+              timestamp={captureCycle.time}
+              timings={captureCycle.componentTimings}
+            />
+          );
+        }
+      })}
+      {noActiveCaptureCycles && <h3>No active capture cycles have completed.</h3>}
     </main>
   );
 };

@@ -2,19 +2,237 @@
 
 exports[`Footer.js should render the footer 1`] = `
 <footer
-  className="Footer"
+  role="contentinfo"
 >
-  <a
-    href="https://github.com/Microsoft/Mezzurite-DevTools"
-    target="_blank"
+  <ul
+    className="footer--content"
   >
-    <img
-      id="gh-logo"
-      src="test-file-stub"
-    />
-  </a>
-  <span>
-    Visit us on GitHub! ~ The Mezzurite Development Team
-  </span>
+    <li
+      className="github-information"
+    >
+      <a
+        ariaLabel="Visit Mezzurite Dev Tools on GitHub"
+        className="github-information--link"
+        href="https://github.com/Microsoft/Mezzurite-DevTools"
+        target="_blank"
+      >
+        <GithubMark />
+        <span
+          className="github-information--text"
+        >
+          Visit us on GitHub!
+          <span
+            className="tablet-hidden"
+          >
+             ~ The Mezzurite Development Team
+          </span>
+        </span>
+      </a>
+    </li>
+    <li
+      className="package-information"
+    >
+      <ul
+        className="package-information--container"
+      >
+        <li
+          className="package-information--name"
+        >
+          <span
+            className="package-information--label"
+          >
+            <span
+              className="tablet-hidden"
+            >
+              Package 
+            </span>
+            Name:
+          </span>
+          <a
+            ariaLabel="Visit Mezzurite on GitHub"
+            className="github-information--package"
+            href="https://github.com/Microsoft/Mezzurite"
+            target="_blank"
+          >
+            packageName
+          </a>
+        </li>
+        <li
+          className="package-information--version"
+        >
+          <span
+            className="package-information--label"
+          >
+            <span
+              className="tablet-hidden"
+            >
+              Package 
+            </span>
+            Version:
+          </span>
+          packageVersion
+        </li>
+      </ul>
+    </li>
+  </ul>
+</footer>
+`;
+
+exports[`Footer.js should render the footer with only a packageName 1`] = `
+<footer
+  role="contentinfo"
+>
+  <ul
+    className="footer--content"
+  >
+    <li
+      className="github-information"
+    >
+      <a
+        ariaLabel="Visit Mezzurite Dev Tools on GitHub"
+        className="github-information--link"
+        href="https://github.com/Microsoft/Mezzurite-DevTools"
+        target="_blank"
+      >
+        <GithubMark />
+        <span
+          className="github-information--text"
+        >
+          Visit us on GitHub!
+          <span
+            className="tablet-hidden"
+          >
+             ~ The Mezzurite Development Team
+          </span>
+        </span>
+      </a>
+    </li>
+    <li
+      className="package-information"
+    >
+      <ul
+        className="package-information--container"
+      >
+        <li
+          className="package-information--name"
+        >
+          <span
+            className="package-information--label"
+          >
+            <span
+              className="tablet-hidden"
+            >
+              Package 
+            </span>
+            Name:
+          </span>
+          <a
+            ariaLabel="Visit Mezzurite on GitHub"
+            className="github-information--package"
+            href="https://github.com/Microsoft/Mezzurite"
+            target="_blank"
+          >
+            packageName
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</footer>
+`;
+
+exports[`Footer.js should render the footer with only a packageVersion 1`] = `
+<footer
+  role="contentinfo"
+>
+  <ul
+    className="footer--content"
+  >
+    <li
+      className="github-information"
+    >
+      <a
+        ariaLabel="Visit Mezzurite Dev Tools on GitHub"
+        className="github-information--link"
+        href="https://github.com/Microsoft/Mezzurite-DevTools"
+        target="_blank"
+      >
+        <GithubMark />
+        <span
+          className="github-information--text"
+        >
+          Visit us on GitHub!
+          <span
+            className="tablet-hidden"
+          >
+             ~ The Mezzurite Development Team
+          </span>
+        </span>
+      </a>
+    </li>
+    <li
+      className="package-information"
+    >
+      <ul
+        className="package-information--container"
+      >
+        <li
+          className="package-information--version"
+        >
+          <span
+            className="package-information--label"
+          >
+            <span
+              className="tablet-hidden"
+            >
+              Package 
+            </span>
+            Version:
+          </span>
+          packageVersion
+        </li>
+      </ul>
+    </li>
+  </ul>
+</footer>
+`;
+
+exports[`Footer.js should render the footer without a packageName or packageVersion 1`] = `
+<footer
+  role="contentinfo"
+>
+  <ul
+    className="footer--content"
+  >
+    <li
+      className="github-information"
+    >
+      <a
+        ariaLabel="Visit Mezzurite Dev Tools on GitHub"
+        className="github-information--link"
+        href="https://github.com/Microsoft/Mezzurite-DevTools"
+        target="_blank"
+      >
+        <GithubMark />
+        <span
+          className="github-information--text"
+        >
+          Visit us on GitHub!
+          <span
+            className="tablet-hidden"
+          >
+             ~ The Mezzurite Development Team
+          </span>
+        </span>
+      </a>
+    </li>
+    <li
+      className="package-information"
+    >
+      <ul
+        className="package-information--container"
+      />
+    </li>
+  </ul>
 </footer>
 `;
