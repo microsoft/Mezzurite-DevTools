@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main.js should be loading when the props are null 1`] = `
+<main
+  className="main"
+>
+  <h2
+    className="main--header"
+  >
+    Mezzurite is working...
+  </h2>
+</main>
+`;
+
+exports[`Main.js should not error out when captureCycles contains a null element 1`] = `
+<main
+  className="main"
+>
+  <h2
+    className="main--header"
+  >
+    App
+    <span
+      className="mobile-hidden"
+    >
+      lication
+    </span>
+     Load Time: 
+    5.42
+     ms
+  </h2>
+</main>
+`;
+
+exports[`Main.js should render when captureCycles is an empty array 1`] = `
+<main
+  className="main"
+>
+  <h2
+    className="main--header"
+  >
+    App
+    <span
+      className="mobile-hidden"
+    >
+      lication
+    </span>
+     Load Time: 
+    5.42
+     ms
+  </h2>
+  <h3>
+    No active capture cycles have completed.
+  </h3>
+</main>
+`;
+
+exports[`Main.js should render without applicationLoadTime 1`] = `
+<main
+  className="main"
+>
+  <CaptureCycle
+    captureCycleIndex={0}
+    timestamp="time"
+    timings={
+      Array [
+        Object {
+          "componentLoadTime": 5.23,
+          "componentName": "ComponentName",
+        },
+      ]
+    }
+  />
+</main>
+`;
+
+exports[`Main.js should render without captureCycles 1`] = `
+<main
+  className="main"
+>
+  <h2
+    className="main--header"
+  >
+    App
+    <span
+      className="mobile-hidden"
+    >
+      lication
+    </span>
+     Load Time: 
+    5.42
+     ms
+  </h2>
+</main>
+`;

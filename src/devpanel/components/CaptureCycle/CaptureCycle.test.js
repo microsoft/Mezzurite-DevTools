@@ -32,7 +32,7 @@ describe('CaptureCycle.js', () => {
 
   it('should not error out when there is no captureCycleIndex', () => {
     const tree = renderer
-      .render(<CaptureCycle timestamp={new Date(2019, 1, 23)} timings={[ { componentLoadTime: 9.2, componentName: 'componentName' } ]} />);
+      .render(<CaptureCycle timestamp={new Date(2019, 1, 23).toLocaleTimeString()} timings={[ { componentLoadTime: 9.2, componentName: 'componentName' } ]} />);
     expect(tree).toMatchSnapshot();
   });
 
@@ -40,7 +40,7 @@ describe('CaptureCycle.js', () => {
     const tree = renderer
       .render(<CaptureCycle
         captureCycleIndex={0}
-        timestamp={new Date(2019, 1, 23)}
+        timestamp={new Date(2019, 1, 23).toLocaleTimeString()}
         timings={[ { componentLoadTime: 9.2, componentName: 'componentName' } ]}
       />);
     expect(tree).toMatchSnapshot();
