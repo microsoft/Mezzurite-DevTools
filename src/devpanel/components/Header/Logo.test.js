@@ -1,14 +1,14 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import Header from './Header';
+import Logo from './Logo';
 
-describe('Header.js', () => {
+describe('Logo.js', () => {
   const renderer = new ShallowRenderer();
 
-  it('should render the header', () => {
+  it('should render the logo', () => {
     const tree = renderer
-      .render(<Header />)
+      .render(<Logo />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
