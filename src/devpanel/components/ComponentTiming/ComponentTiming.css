@@ -1,19 +1,41 @@
 @media only screen {
   .component-timing--card {
-    background-color: var(--microsoft-blue);
+    align-items: center;
+    background-color: var(--microsoft-blue-lighter);
     border-radius: 4px;
-    color: var(--microsoft-white);
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 8px;
-    padding: 0 8px;
     text-align: center;
     width: 100%;
+  }
+
+  .component-timing--detail {
+    display: flex;
+    margin: 0 8px;
+  }
+
+  .component-timing--name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-left: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .component-timing--statistic {
+    font-weight: 700;
   }
 }
 
 @media only screen and (min-width: 540px) {
   .component-timing--card {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     margin-right: 2px;
-    max-width: 200px;
+  }
+
+  .component-timing--statistic {
+    margin-left: 4px;
   }
 }
