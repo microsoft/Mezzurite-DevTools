@@ -1,4 +1,4 @@
 import BackgroundController from './BackgroundController.js';
 
-const backgroundController = BackgroundController();
+const backgroundController = new BackgroundController();
 backgroundController.init();
