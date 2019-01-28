@@ -46,9 +46,6 @@ class App extends Component {
 
         this.setState({ framework: formattedTimings.framework });
       });
-
-      // Tell the background page to programmatically inject the content script.
-      MezzuriteInspector.tellBackgroundToMountContentScript();
     });
   }
 
