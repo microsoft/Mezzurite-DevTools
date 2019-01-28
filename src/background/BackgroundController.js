@@ -40,7 +40,7 @@ class BackgroundController {
     // for the current tab
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       // Messages from content scripts should have sender.tab set
-      if (sender.tab) {
+      if (sender.tab != null) {
         var tabId = sender.tab.id;
         if (request.action === 'timing') {
           if (tabId in this.connections) {
