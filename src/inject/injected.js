@@ -43,7 +43,8 @@
 
       initTimingEventForwarding();
     } else {
-      if (--timeoutCounter === 0) {
+      --timeoutCounter;
+      if (timeoutCounter === 0) {
         // Did not find Mezzurite after 10 seconds... timeout: notify DT extension
         sendEventViaDocument(new CustomEvent('MezzuriteNotFound'));
         clearInterval(mezzuriteLoadCheckInterval);
