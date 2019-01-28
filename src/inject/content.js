@@ -1,13 +1,18 @@
 // This script will be run in the context of the inspected window
 // It will have shared access to the DOM, but not global variables
 // like window. That is isolated. This is why we inject the
-// additional script
+// additional script.
 'use strict';
 
+document.addEventListener('MezzuriteFound', onMezzuriteFound);
+document.addEventListener('MezzuriteNotFound', onMezzuriteNotFound);
 document.addEventListener('MezzuriteTiming_toExtension', onTimingEvent);
-injectScript('inject.bundle.js'); // Relative path is apparently determined from the manifest.json's position
 
-/// /////////////////////////////
+// Injecting code...
+// Relative path is apparently determined from the manifest.json's position
+injectScript('inject.bundle.js');
+
+// ----------------------------------------------------------------------------
 
 /**
  * The event listener callback that listens for forwarded Mezzurite
@@ -22,6 +27,20 @@ function onTimingEvent (timingEvent) {
   chrome.runtime.sendMessage({
     action: 'timing',
     payload: timingEvent.detail
+  });
+}
+
+function onMezzuriteFound (event) {
+  console.log('CS: Got an event: MezzuriteFound');
+  chrome.runtime.sendMessage({
+    action: 'mezzuriteFound'
+  });
+}
+
+function onMezzuriteNotFound (event) {
+  console.log('CS: Got an event: MezzuriteNotFound');
+  chrome.runtime.sendMessage({
+    action: 'mezzuriteNotFound'
   });
 }
 

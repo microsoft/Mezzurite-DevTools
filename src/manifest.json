@@ -28,6 +28,14 @@
             "32": "img/icon32.png"
         }
     },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.bundle.js"],
+            "run_at": "document_end",
+            "all_frames": false
+        }
+    ],
     "icons": {
         "16": "img/icon16.png",
         "48": "img/icon48.png",
