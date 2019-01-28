@@ -13,7 +13,7 @@
   function initTimingEventForwarding () {
     // We assume that by the time we call this function,
     // the extension has already verified the existence of `window.mezzurite`.
-    if (!window.mezzurite.EventElement) {
+    if (window.mezzurite.EventElement == null) {
       window.mezzurite.EventElement = {};
       window.mezzurite.EventElement = document.createTextNode('');
     }
