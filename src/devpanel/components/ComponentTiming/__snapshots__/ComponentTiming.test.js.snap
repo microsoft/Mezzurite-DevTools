@@ -4,13 +4,25 @@ exports[`ComponentTiming.js should render the componentTiming 1`] = `
 <li
   className="component-timing--card"
 >
-  <h3>
+  <h3
+    className="component-timing--name"
+  >
     ComponentName
   </h3>
-  <p>
-    Time to load: 
-    14.2
-     ms
+  <p
+    className="component-timing--detail"
+  >
+    <span
+      className="mobile-hidden"
+    >
+      Load time:
+    </span>
+    <span
+      className="component-timing--statistic"
+    >
+      14.2
+    </span>
+    ms
   </p>
 </li>
 `;
@@ -19,10 +31,20 @@ exports[`ComponentTiming.js should render the componentTiming with only a loadTi
 <li
   className="component-timing--card"
 >
-  <p>
-    Time to load: 
-    14.2
-     ms
+  <p
+    className="component-timing--detail"
+  >
+    <span
+      className="mobile-hidden"
+    >
+      Load time:
+    </span>
+    <span
+      className="component-timing--statistic"
+    >
+      14.2
+    </span>
+    ms
   </p>
 </li>
 `;
@@ -31,7 +53,9 @@ exports[`ComponentTiming.js should render the componentTiming with only a name 1
 <li
   className="component-timing--card"
 >
-  <h3>
+  <h3
+    className="component-timing--name"
+  >
     ComponentName
   </h3>
 </li>
