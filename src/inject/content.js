@@ -30,14 +30,14 @@ function onTimingEvent (timingEvent) {
   });
 }
 
-function onMezzuriteFound (event) {
+function onMezzuriteFound () {
   console.log('CS: Got an event: MezzuriteFound');
   chrome.runtime.sendMessage({
     action: 'mezzuriteFound'
   });
 }
 
-function onMezzuriteNotFound (event) {
+function onMezzuriteNotFound () {
   console.log('CS: Got an event: MezzuriteNotFound');
   chrome.runtime.sendMessage({
     action: 'mezzuriteNotFound'
