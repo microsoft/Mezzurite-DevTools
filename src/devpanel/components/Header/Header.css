@@ -1,19 +1,27 @@
 @media only screen {
   .header {
+    align-items: center;
     background-color: var(--microsoft-gray-darkest);
     color: var(--microsoft-white);
+    display: flex;
+    justify-content: center;
     padding: 10px;
   }
 
   .header--text {
+    font-size: 16px;
     margin: 0;
     padding: 0;
-    text-align: center;
   }
 }
 
 @media only screen and (min-width: 540px) {
+  .header {
+    justify-content: start;
+  }
+
   .header--text {
+    font-size: 24px;
     text-align: start;
   }
 }

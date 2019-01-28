@@ -1,0 +1,18 @@
+@media only screen {
+  .logo-inner {
+    fill: var(--microsoft-white);
+  }
+
+  .logo {
+    background-color: var(--microsoft-orange);
+    border-radius: 16px;
+    margin-right: 8px;
+    padding: 2px;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .logo {
+    padding: 4px;
+  }
+}
