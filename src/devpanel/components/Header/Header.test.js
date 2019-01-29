@@ -8,8 +8,7 @@ describe('Header.js', () => {
 
   it('should render the header', () => {
     const tree = renderer
-      .render(<Header />)
-      .toJSON();
+      .render(<Header />);
     expect(tree).toMatchSnapshot();
   });
 });
