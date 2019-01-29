@@ -39,8 +39,8 @@ class App extends Component {
       }
 
       if (
-        formatTimingsEvent.insideViewportComponents != null ||
-        formatTimingsEvent.outsideViewportComponents != null
+        formattedTimings.insideViewportComponents != null ||
+        formattedTimings.outsideViewportComponents != null
       ) {
         const captureCycle = {
           insideViewportComponents: formattedTimings.insideViewportComponents,
