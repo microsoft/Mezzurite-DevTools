@@ -9,7 +9,7 @@ const Footer = (props) => (
     <ul className='footer--content'>
       <li className='github-information'>
         <a
-          ariaLabel='Visit Mezzurite Dev Tools on GitHub'
+          aria-label='Visit Mezzurite Dev Tools on GitHub'
           className='github-information--link'
           href='https://github.com/Microsoft/Mezzurite-DevTools'
           target='_blank'
@@ -22,7 +22,7 @@ const Footer = (props) => (
         <ul className='package-information--container'>
           {props.packageName != null && <li className='package-information--name'>
             <span className='package-information--label'><span className='tablet-hidden'>Package </span>Name:</span>
-            <a ariaLabel='Visit Mezzurite on GitHub' className='github-information--package' href='https://github.com/Microsoft/Mezzurite' target='_blank'>
+            <a aria-label='Visit Mezzurite on GitHub' className='github-information--package' href='https://github.com/Microsoft/Mezzurite' target='_blank'>
               {props.packageName}
             </a>
           </li>}
