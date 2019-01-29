@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainLoading.js should render the main loading view 1`] = `
+<div
+  className="capture-cycle--card capture-cycle--skeleton"
+>
+  <div
+    className="capture-cycle--skeleton-title shimmer"
+  />
+  <div
+    className="capture-cycle--skeleton-container"
+  >
+    <div
+      className="capture-cycle--skeleton-component shimmer"
+    />
+    <div
+      className="capture-cycle--skeleton-component shimmer"
+    />
+    <div
+      className="capture-cycle--skeleton-component shimmer"
+    />
+  </div>
+</div>
+`;
