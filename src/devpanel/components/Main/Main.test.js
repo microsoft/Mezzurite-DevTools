@@ -12,9 +12,21 @@ describe('Main.js', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render without captureCycles', () => {
+  it('should render with loading as true', () => {
     const tree = renderer
-      .render(<Main applicationLoadTime={5.42} />);
+      .render(<Main loading />);
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render without captureCycles and loading as true', () => {
+    const tree = renderer
+      .render(<Main applicationLoadTime={5.42} loading />);
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render without captureCycles and loading as false', () => {
+    const tree = renderer
+      .render(<Main applicationLoadTime={5.42} loading={false} />);
     expect(tree).toMatchSnapshot();
   });
 
