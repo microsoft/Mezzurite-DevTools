@@ -1,31 +1,64 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { arrayOf, number, shape, string } from 'prop-types';
 
 import './CaptureCycle.css';
-import ComponentTiming from '../ComponentTiming/ComponentTiming.js';
+import CaptureCycleSection from '../CaptureCycleSection/CaptureCycleSection';
 
-const CaptureCycle = (props) => (
-  props != null && props.timings != null && props.timings.length > 0 && <section className='capture-cycle--card'>
-    <h2 className='capture-cycle--timestamp'>Capture Cycle{props.timestamp != null && <span> at {props.timestamp}:</span>}</h2>
-    <ul className='capture-cycle--components'>
-      {props.timings.map((timing, timingIndex) =>
-        <ComponentTiming
-          key={`capture-cycle-${props.captureCycleIndex}-component-${timingIndex}`}
-          name={timing.componentName}
-          loadTime={timing.componentLoadTime}
+const CaptureCycle = (props) => {
+  const captureCycleHeader = <h2 className='capture-cycle--timestamp'>
+    {props.routeUrl == null ? 'Capture Cycle' : props.routeUrl}
+    {props.timestamp != null && <span> at {props.timestamp}:</span>}
+  </h2>;
+  const insideViewportHeading = 'Inside Viewport';
+  const insideViewportSubheading = props.viewportLoadTime != null && <Fragment>
+    Viewport Load Time: <span className='capture-cycle--statistic'>{props.viewportLoadTime.toFixed(1)}</span>ms
+    <a
+      aria-label='What is viewport load time?'
+      className='capture-cycle--tooltip'
+      href='https://github.com/Microsoft/Mezzurite#viewport-load-time-vlt'
+      target='_blank'
+    >?</a>
+  </Fragment>;
+  const outsideViewportHeading = 'Outside Viewport';
+  const shouldRenderInsideViewportComponents = props.insideViewportComponents != null && props.insideViewportComponents.length > 0;
+  const shouldRenderOutsideViewportComponents = props.outsideViewportComponents != null && props.outsideViewportComponents.length > 0;
+
+  return (
+    props != null && (shouldRenderInsideViewportComponents || shouldRenderOutsideViewportComponents) &&
+    <section className='capture-cycle--card'>
+      {captureCycleHeader}
+      {shouldRenderInsideViewportComponents &&
+        <CaptureCycleSection
+          captureCycleIndex={props.captureCycleIndex}
+          components={props.insideViewportComponents}
+          heading={insideViewportHeading}
+          subheading={insideViewportSubheading}
         />
-      )}
-    </ul>
-  </section>
-);
+      }
+      {shouldRenderOutsideViewportComponents &&
+        <CaptureCycleSection
+          captureCycleIndex={props.captureCycleIndex}
+          components={props.outsideViewportComponents}
+          heading={outsideViewportHeading}
+        />
+      }
+    </section>
+  );
+};
 
 CaptureCycle.propTypes = {
   captureCycleIndex: number,
-  timestamp: string,
-  timings: arrayOf(shape({
+  insideViewportComponents: arrayOf(shape({
     componentLoadTime: number,
     componentName: string
-  }))
+  })),
+  outsideViewportComponents: arrayOf(shape({
+    componentLoadTime: number,
+    componentName: string
+  })),
+  routeUrl: string,
+  timestamp: string,
+  viewportLoadTime: number
 };
 
 export default CaptureCycle;

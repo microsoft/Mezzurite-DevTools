@@ -1,6 +1,123 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CaptureCycle.js should not error out when there is no captureCycleIndex 1`] = `
+exports[`CaptureCycle.js should render when there are both insideViewportComponents and outsideViewportComponents 1`] = `
+<section
+  className="capture-cycle--card"
+>
+  <h2
+    className="capture-cycle--timestamp"
+  >
+    Capture Cycle
+  </h2>
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Inside Viewport"
+    subheading={false}
+  />
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Outside Viewport"
+  />
+</section>
+`;
+
+exports[`CaptureCycle.js should render when there are only insideViewportComponents 1`] = `
+<section
+  className="capture-cycle--card"
+>
+  <h2
+    className="capture-cycle--timestamp"
+  >
+    Capture Cycle
+  </h2>
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Inside Viewport"
+    subheading={false}
+  />
+</section>
+`;
+
+exports[`CaptureCycle.js should render when there are only outsideViewportComponents 1`] = `
+<section
+  className="capture-cycle--card"
+>
+  <h2
+    className="capture-cycle--timestamp"
+  >
+    Capture Cycle
+  </h2>
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Outside Viewport"
+  />
+</section>
+`;
+
+exports[`CaptureCycle.js should render with a routeUrl 1`] = `
+<section
+  className="capture-cycle--card"
+>
+  <h2
+    className="capture-cycle--timestamp"
+  >
+    routeUrl
+  </h2>
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Inside Viewport"
+    subheading={false}
+  />
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Outside Viewport"
+  />
+</section>
+`;
+
+exports[`CaptureCycle.js should render with a timestamp 1`] = `
 <section
   className="capture-cycle--card"
 >
@@ -10,22 +127,37 @@ exports[`CaptureCycle.js should not error out when there is no captureCycleIndex
     Capture Cycle
     <span>
        at 
-      12:00:00 AM
+      timestamp
       :
     </span>
   </h2>
-  <ul
-    className="capture-cycle--components"
-  >
-    <ComponentTiming
-      loadTime={9.2}
-      name="componentName"
-    />
-  </ul>
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Inside Viewport"
+    subheading={false}
+  />
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Outside Viewport"
+  />
 </section>
 `;
 
-exports[`CaptureCycle.js should not error out when there is no timestamp 1`] = `
+exports[`CaptureCycle.js should render with a viewportLoadTime 1`] = `
 <section
   className="capture-cycle--card"
 >
@@ -34,38 +166,86 @@ exports[`CaptureCycle.js should not error out when there is no timestamp 1`] = `
   >
     Capture Cycle
   </h2>
-  <ul
-    className="capture-cycle--components"
-  >
-    <ComponentTiming
-      loadTime={9.2}
-      name="componentName"
-    />
-  </ul>
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Inside Viewport"
+    subheading={
+      <React.Fragment>
+        Viewport Load Time: 
+        <span
+          className="capture-cycle--statistic"
+        >
+          15.4
+        </span>
+        ms
+        <a
+          aria-label="What is viewport load time?"
+          className="capture-cycle--tooltip"
+          href="https://github.com/Microsoft/Mezzurite#viewport-load-time-vlt"
+          target="_blank"
+        >
+          ?
+        </a>
+      </React.Fragment>
+    }
+  />
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Outside Viewport"
+  />
 </section>
 `;
 
-exports[`CaptureCycle.js should render the capture cycle 1`] = `
+exports[`CaptureCycle.js should render with both a routeUrl and timestamp 1`] = `
 <section
   className="capture-cycle--card"
 >
   <h2
     className="capture-cycle--timestamp"
   >
-    Capture Cycle
+    routeUrl
     <span>
        at 
-      12:00:00 AM
+      timestamp
       :
     </span>
   </h2>
-  <ul
-    className="capture-cycle--components"
-  >
-    <ComponentTiming
-      loadTime={9.2}
-      name="componentName"
-    />
-  </ul>
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Inside Viewport"
+    subheading={false}
+  />
+  <CaptureCycleSection
+    components={
+      Array [
+        Object {
+          "componentLoadTime": 12.2,
+          "componentName": "componentName",
+        },
+      ]
+    }
+    heading="Outside Viewport"
+  />
 </section>
 `;

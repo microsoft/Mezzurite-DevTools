@@ -4,11 +4,11 @@ exports[`ComponentTiming.js should render the componentTiming 1`] = `
 <li
   className="component-timing--card"
 >
-  <h3
+  <h4
     className="component-timing--name"
   >
     ComponentName
-  </h3>
+  </h4>
   <p
     className="component-timing--detail"
   >
@@ -53,10 +53,10 @@ exports[`ComponentTiming.js should render the componentTiming with only a name 1
 <li
   className="component-timing--card"
 >
-  <h3
+  <h4
     className="component-timing--name"
   >
     ComponentName
-  </h3>
+  </h4>
 </li>
 `;

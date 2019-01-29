@@ -12,36 +12,136 @@ describe('CaptureCycle.js', () => {
     expect(tree).toBeFalsy();
   });
 
-  it('should not render when the timings are null', () => {
+  it('should not render when insideViewportComponents and outsideViewportComponents are null', () => {
     const tree = renderer
-      .render(<CaptureCycle timings={null} />);
+      .render(<CaptureCycle insideViewportComponents={null} outsideViewportComponents={null} />);
     expect(tree).toBeFalsy();
   });
 
-  it('should not render when there are no timings', () => {
+  it('should not render when insideViewportComponents and outsideViewportComponents are empty', () => {
     const tree = renderer
-      .render(<CaptureCycle timings={[]} />);
+      .render(<CaptureCycle insideViewportComponents={[]} outsideViewportComponents={[]} />);
     expect(tree).toBeFalsy();
   });
 
-  it('should not error out when there is no timestamp', () => {
+  it('should render when there are only insideViewportComponents', () => {
     const tree = renderer
-      .render(<CaptureCycle captureCycleIndex={0} timings={[ { componentLoadTime: 9.2, componentName: 'componentName' } ]} />);
+      .render(<CaptureCycle insideViewportComponents={[
+        {
+          componentLoadTime: 12.2,
+          componentName: 'componentName'
+        }
+      ]} />);
     expect(tree).toMatchSnapshot();
   });
 
-  it('should not error out when there is no captureCycleIndex', () => {
+  it('should render when there are only outsideViewportComponents', () => {
     const tree = renderer
-      .render(<CaptureCycle timestamp={new Date(2019, 1, 23).toLocaleTimeString()} timings={[ { componentLoadTime: 9.2, componentName: 'componentName' } ]} />);
+      .render(<CaptureCycle outsideViewportComponents={[
+        {
+          componentLoadTime: 12.2,
+          componentName: 'componentName'
+        }
+      ]} />);
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render the capture cycle', () => {
+  it('should render when there are both insideViewportComponents and outsideViewportComponents', () => {
     const tree = renderer
       .render(<CaptureCycle
-        captureCycleIndex={0}
-        timestamp={new Date(2019, 1, 23).toLocaleTimeString()}
-        timings={[ { componentLoadTime: 9.2, componentName: 'componentName' } ]}
+        insideViewportComponents={[
+          {
+            componentLoadTime: 12.2,
+            componentName: 'componentName'
+          }
+        ]}
+        outsideViewportComponents={[
+          {
+            componentLoadTime: 12.2,
+            componentName: 'componentName'
+          }
+        ]}
+      />);
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render with a routeUrl', () => {
+    const tree = renderer
+      .render(<CaptureCycle
+        insideViewportComponents={[
+          {
+            componentLoadTime: 12.2,
+            componentName: 'componentName'
+          }
+        ]}
+        outsideViewportComponents={[
+          {
+            componentLoadTime: 12.2,
+            componentName: 'componentName'
+          }
+        ]}
+        routeUrl='routeUrl'
+      />);
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render with a timestamp', () => {
+    const tree = renderer
+      .render(<CaptureCycle
+        insideViewportComponents={[
+          {
+            componentLoadTime: 12.2,
+            componentName: 'componentName'
+          }
+        ]}
+        outsideViewportComponents={[
+          {
+            componentLoadTime: 12.2,
+            componentName: 'componentName'
+          }
+        ]}
+        timestamp='timestamp'
+      />);
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render with both a routeUrl and timestamp', () => {
+    const tree = renderer
+      .render(<CaptureCycle
+        insideViewportComponents={[
+          {
+            componentLoadTime: 12.2,
+            componentName: 'componentName'
+          }
+        ]}
+        outsideViewportComponents={[
+          {
+            componentLoadTime: 12.2,
+            componentName: 'componentName'
+          }
+        ]}
+        routeUrl='routeUrl'
+        timestamp='timestamp'
+      />);
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render with a viewportLoadTime', () => {
+    const tree = renderer
+      .render(<CaptureCycle
+        insideViewportComponents={[
+          {
+            componentLoadTime: 12.2,
+            componentName: 'componentName'
+          }
+        ]}
+        outsideViewportComponents={[
+          {
+            componentLoadTime: 12.2,
+            componentName: 'componentName'
+          }
+        ]}
+        viewportLoadTime={15.4}
       />);
     expect(tree).toMatchSnapshot();
   });

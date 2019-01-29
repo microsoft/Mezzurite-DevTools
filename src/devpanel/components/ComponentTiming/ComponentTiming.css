@@ -12,14 +12,14 @@
 
   .component-timing--detail {
     display: flex;
-    margin: 0 8px;
+    margin: 12px;
   }
 
   .component-timing--name {
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
-    margin-left: 8px;
+    margin: 12px;
     overflow: hidden;
     text-overflow: ellipsis;
   }

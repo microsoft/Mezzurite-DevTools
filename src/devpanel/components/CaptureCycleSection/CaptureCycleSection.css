@@ -1,0 +1,30 @@
+@media only screen {
+  .capture-cycle--components {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 16px;
+    padding: 0;
+  }
+
+  .capture-cycle--section-header {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 12px 16px 0;
+    text-align: center;
+  }
+
+  .capture-cycle--section-sub-header {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 8px 16px 0;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .capture-cycle--section-header,
+  .capture-cycle--section-sub-header {
+    text-align: left;
+  }
+}
