@@ -56,119 +56,6 @@ describe('formatTimingsEvent.js', () => {
     });
   });
 
-  describe('componentTimings', () => {
-    it('should return null for the componentTimings when the Timings property is null', () => {
-      expect(formatTimingsEvent({ Timings: null }).componentTimings).toBeNull();
-    });
-
-    it('should return null for the componentTimings when the Timings property is undefined', () => {
-      expect(formatTimingsEvent({ Timings: undefined }).componentTimings).toBeNull();
-    });
-
-    it('should return null for the componentTimings when the Timings property is not an array', () => {
-      expect(formatTimingsEvent({ Timings: 1 }).componentTimings).toBeNull();
-    });
-
-    it('should return null for the componentTimings when the Timings array is empty', () => {
-      expect(formatTimingsEvent({ Timings: [] }).componentTimings).toBeNull();
-    });
-
-    it('should return null for the componentTimings when the Timings array has a null value', () => {
-      expect(formatTimingsEvent({ Timings: [ null ] }).componentTimings).toBeNull();
-    });
-
-    it('should return null for the componentTimings when the Timings array has an undefined value', () => {
-      expect(formatTimingsEvent({ Timings: [ undefined ] }).componentTimings).toBeNull();
-    });
-
-    it('should return null for the componentTimings when there is no timing with AllComponents as the metricType', () => {
-      expect(formatTimingsEvent({
-        Timings: [
-          {
-            metricType: 'test'
-          }
-        ]
-      }).componentTimings).toBeNull();
-    });
-
-    it('should return null for the componentTimings when the data is null', () => {
-      expect(formatTimingsEvent({
-        Timings: [
-          {
-            metricType: 'AllComponents',
-            data: null
-          }
-        ]
-      }).componentTimings).toBeNull();
-    });
-
-    it('should return null for the componentTimings when the data cannot be parsed', () => {
-      const warnSpy = jest.spyOn(console, 'warn');
-      expect(formatTimingsEvent({
-        Timings: [
-          {
-            metricType: 'AllComponents',
-            data: 'Unparseable{{string/asdjfa;;'
-          }
-        ]
-      }).componentTimings).toBeNull();
-      expect(warnSpy).toHaveBeenCalledWith('The data provided by Mezzurite could not be parsed.');
-    });
-
-    it('should return null for the componentTimings when the data is valid JSON but in the wrong format', () => {
-      expect(formatTimingsEvent({
-        Timings: [
-          {
-            metricType: 'AllComponents',
-            data: `{ "improper": true }`
-          }
-        ]
-      }).componentTimings).toBeNull();
-    });
-
-    it('should return an empty array for the componentTimings when the data is an empty array', () => {
-      expect(formatTimingsEvent({
-        Timings: [
-          {
-            metricType: 'AllComponents',
-            data: `[]`
-          }
-        ]
-      }).componentTimings).toMatchObject([]);
-    });
-
-    it('should ignore any entries for the componentTimings without a name and clt', () => {
-      expect(formatTimingsEvent({
-        Timings: [
-          {
-            metricType: 'AllComponents',
-            data: `[ null, { "name": null, "clt": 10.2 }, { "name": "componentName", "clt": null } ]`
-          }
-        ]
-      }).componentTimings).toMatchObject([]);
-    });
-
-    it('should properly map and sort the componentTimings', () => {
-      expect(formatTimingsEvent({
-        Timings: [
-          {
-            metricType: 'AllComponents',
-            data: `[ { "name": "componentName", "clt": 10.2 }, { "name": "componentName", "clt": 11.2 } ]`
-          }
-        ]
-      }).componentTimings).toMatchObject([
-        {
-          componentName: 'componentName',
-          componentLoadTime: 11.2
-        },
-        {
-          componentName: 'componentName',
-          componentLoadTime: 10.2
-        }
-      ]);
-    });
-  });
-
   describe('framework', () => {
     it('should return an empty framework when the Framework property is null', () => {
       expect(formatTimingsEvent({ Framework: null }).framework).toMatchObject({
@@ -196,6 +83,317 @@ describe('formatTimingsEvent.js', () => {
         name: 'name',
         version: 'version'
       });
+    });
+  });
+
+  describe('insideViewportComponents', () => {
+    it('should return null for insideViewportComponents when the Timings property is null', () => {
+      expect(formatTimingsEvent({ Timings: null }).insideViewportComponents).toBeNull();
+    });
+
+    it('should return null for insideViewportComponents when the Timings property is undefined', () => {
+      expect(formatTimingsEvent({ Timings: undefined }).insideViewportComponents).toBeNull();
+    });
+
+    it('should return null for insideViewportComponents when the Timings property is not an array', () => {
+      expect(formatTimingsEvent({ Timings: 1 }).insideViewportComponents).toBeNull();
+    });
+
+    it('should return null for insideViewportComponents when the Timings array is empty', () => {
+      expect(formatTimingsEvent({ Timings: [] }).insideViewportComponents).toBeNull();
+    });
+
+    it('should return null for insideViewportComponents when the Timings array has a null value', () => {
+      expect(formatTimingsEvent({ Timings: [ null ] }).insideViewportComponents).toBeNull();
+    });
+
+    it('should return null for insideViewportComponents when the Timings array has an undefined value', () => {
+      expect(formatTimingsEvent({ Timings: [ undefined ] }).insideViewportComponents).toBeNull();
+    });
+
+    it('should return null for insideViewportComponents when there is no timing with VLT as the metricType', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'test'
+          }
+        ]
+      }).insideViewportComponents).toBeNull();
+    });
+
+    it('should return null for insideViewportComponents when the data is null', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'VLT',
+            data: null
+          }
+        ]
+      }).insideViewportComponents).toBeNull();
+    });
+
+    it('should return null for insideViewportComponents when the data cannot be parsed', () => {
+      const warnSpy = jest.spyOn(console, 'warn');
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'VLT',
+            data: 'Unparseable{{string/asdjfa;;'
+          }
+        ]
+      }).insideViewportComponents).toBeNull();
+      expect(warnSpy).toHaveBeenCalledWith('The data provided by Mezzurite could not be parsed.');
+    });
+
+    it('should return null for insideViewportComponents when the data is valid JSON but in the wrong format', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'VLT',
+            data: `{ "improper": true }`
+          }
+        ]
+      }).insideViewportComponents).toBeNull();
+    });
+
+    it('should return an empty array for insideViewportComponents when the data is an empty array', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'VLT',
+            data: `[]`
+          }
+        ]
+      }).insideViewportComponents).toMatchObject([]);
+    });
+
+    it('should ignore any entries for insideViewportComponents without a name and clt', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'VLT',
+            data: `[ null, { "name": null, "clt": 10.2 }, { "name": "componentName", "clt": null } ]`
+          }
+        ]
+      }).insideViewportComponents).toMatchObject([]);
+    });
+
+    it('should properly map the insideViewportComponents', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'VLT',
+            data: `[ { "name": "componentName", "clt": 10.2 }, { "name": "componentName", "clt": 11.2 } ]`
+          }
+        ]
+      }).insideViewportComponents).toMatchObject([
+        {
+          componentName: 'componentName',
+          componentLoadTime: 11.2
+        },
+        {
+          componentName: 'componentName',
+          componentLoadTime: 10.2
+        }
+      ]);
+    });
+  });
+
+  describe('outsideViewportComponents', () => {
+    it('should return null for outsideViewportComponents when the Timings property is null', () => {
+      expect(formatTimingsEvent({ Timings: null }).outsideViewportComponents).toBeNull();
+    });
+
+    it('should return null for outsideViewportComponents when the Timings property is undefined', () => {
+      expect(formatTimingsEvent({ Timings: undefined }).outsideViewportComponents).toBeNull();
+    });
+
+    it('should return null for outsideViewportComponents when the Timings property is not an array', () => {
+      expect(formatTimingsEvent({ Timings: 1 }).outsideViewportComponents).toBeNull();
+    });
+
+    it('should return null for outsideViewportComponents when the Timings array is empty', () => {
+      expect(formatTimingsEvent({ Timings: [] }).outsideViewportComponents).toBeNull();
+    });
+
+    it('should return null for outsideViewportComponents when the Timings array has a null value', () => {
+      expect(formatTimingsEvent({ Timings: [ null ] }).outsideViewportComponents).toBeNull();
+    });
+
+    it('should return null for outsideViewportComponents when the Timings array has an undefined value', () => {
+      expect(formatTimingsEvent({ Timings: [ undefined ] }).outsideViewportComponents).toBeNull();
+    });
+
+    it('should return null for outsideViewportComponents when there is no timing with AllComponents as the metricType', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'test'
+          }
+        ]
+      }).outsideViewportComponents).toBeNull();
+    });
+
+    it('should return null for outsideViewportComponents when the data is null', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'AllComponents',
+            data: null
+          }
+        ]
+      }).outsideViewportComponents).toBeNull();
+    });
+
+    it('should return null for outsideViewportComponents when the data cannot be parsed', () => {
+      const warnSpy = jest.spyOn(console, 'warn');
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'AllComponents',
+            data: 'Unparseable{{string/asdjfa;;'
+          }
+        ]
+      }).outsideViewportComponents).toBeNull();
+      expect(warnSpy).toHaveBeenCalledWith('The data provided by Mezzurite could not be parsed.');
+    });
+
+    it('should return null for outsideViewportComponents when the data is valid JSON but in the wrong format', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'outsideViewportComponents',
+            data: `{ "improper": true }`
+          }
+        ]
+      }).outsideViewportComponents).toBeNull();
+    });
+
+    it('should return an empty array for outsideViewportComponents when the data is an empty array', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'AllComponents',
+            data: `[]`
+          }
+        ]
+      }).outsideViewportComponents).toMatchObject([]);
+    });
+
+    it('should ignore any entries for outsideViewportComponents without a name and clt', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'AllComponents',
+            data: `[ null, { "name": null, "clt": 10.2 }, { "name": "componentName", "clt": null } ]`
+          }
+        ]
+      }).outsideViewportComponents).toMatchObject([]);
+    });
+
+    it('should properly map outsideViewportComponents when there are no insideViewportComponents', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'AllComponents',
+            data: `[ { "name": "componentName", "clt": 10.2 }, { "name": "componentName", "clt": 11.2 } ]`
+          }
+        ]
+      }).outsideViewportComponents).toMatchObject([
+        {
+          componentName: 'componentName',
+          componentLoadTime: 11.2
+        },
+        {
+          componentName: 'componentName',
+          componentLoadTime: 10.2
+        }
+      ]);
+    });
+
+    it('should properly map outsideViewportComponents and filter out the insideViewportComponents', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'AllComponents',
+            data: `[ { "name": "componentName", "clt": 10.2 }, { "name": "componentName", "clt": 11.2 } ]`
+          },
+          {
+            metricType: 'VLT',
+            data: `[ { "name": "componentName", "clt": 11.2 } ]`
+          }
+        ]
+      }).outsideViewportComponents).toMatchObject([
+        {
+          componentName: 'componentName',
+          componentLoadTime: 10.2
+        }
+      ]);
+    });
+  });
+
+  describe('routeUrl', () => {
+    it('should return null for routeUrl when the RouteUrl property is null', () => {
+      expect(formatTimingsEvent({ RouteUrl: null }).routeUrl).toBeNull();
+    });
+
+    it('should return null for routeUrl when the RouteUrl property is undefined', () => {
+      expect(formatTimingsEvent({ RouteUrl: undefined }).routeUrl).toBeNull();
+    });
+
+    it('should return null for routeUrl when the RouteUrl property is just a backslash', () => {
+      expect(formatTimingsEvent({ RouteUrl: '/' }).routeUrl).toBeNull();
+    });
+
+    it('should return the routeUrl', () => {
+      expect(formatTimingsEvent({ RouteUrl: '/home' }).routeUrl).toBe('/home');
+    });
+  });
+
+  describe('viewportLoadTime', () => {
+    it('should return null for viewportLoadTime when the Timings property is null', () => {
+      expect(formatTimingsEvent({ Timings: null }).viewportLoadTime).toBeNull();
+    });
+
+    it('should return null for viewportLoadTime when the Timings property is undefined', () => {
+      expect(formatTimingsEvent({ Timings: undefined }).viewportLoadTime).toBeNull();
+    });
+
+    it('should return null for viewportLoadTime when the Timings property is not an array', () => {
+      expect(formatTimingsEvent({ Timings: 1 }).viewportLoadTime).toBeNull();
+    });
+
+    it('should return null for viewportLoadTime when the Timings array is empty', () => {
+      expect(formatTimingsEvent({ Timings: [] }).viewportLoadTime).toBeNull();
+    });
+
+    it('should return null for viewportLoadTime when the Timings array has a null value', () => {
+      expect(formatTimingsEvent({ Timings: [ null ] }).viewportLoadTime).toBeNull();
+    });
+
+    it('should return null for viewportLoadTime when the Timings array has an undefined value', () => {
+      expect(formatTimingsEvent({ Timings: [ undefined ] }).viewportLoadTime).toBeNull();
+    });
+
+    it('should return null for viewportLoadTime when there is no timing with VLT as the metricType', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'test'
+          }
+        ]
+      }).viewportLoadTime).toBeNull();
+    });
+
+    it('should return the viewportLoadTime', () => {
+      expect(formatTimingsEvent({
+        Timings: [
+          {
+            metricType: 'VLT',
+            value: 14.3
+          }
+        ]
+      }).viewportLoadTime).toBe(14.3);
     });
   });
 });
