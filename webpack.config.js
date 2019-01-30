@@ -10,7 +10,7 @@ module.exports = {
     devpanel: './src/devpanel/index.js',
     devtools: './src/devtools/index.js',
     content: './src/content/index.js',
-    inject: './src/inject/injected.js'
+    inject: './src/inject/index.js'
   },
   mode: 'development',
   module: {
