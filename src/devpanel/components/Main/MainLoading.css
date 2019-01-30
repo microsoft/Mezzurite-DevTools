@@ -1,0 +1,51 @@
+@media only screen {
+  .capture-cycle--skeleton {
+    padding-bottom: 4px;
+  }
+
+  .capture-cycle--skeleton-component {
+    border-radius: 8px;
+    height: 28px;
+    margin: 0 16px 16px;
+  }
+
+  .capture-cycle--skeleton-title {
+    height: 24px;
+    border-radius: 8px;
+    margin: 16px auto 36px;
+    max-width: 50%;
+  }
+
+  .shimmer {
+    background: var(--microsoft-gray-lightest);
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--microsoft-gray-lightest)), color-stop(20%, var(--microsoft-gray-lighter)), color-stop(60%, var(--microsoft-gray-lightest)), to(var(--microsoft-gray-lightest)));
+    background-image: -webkit-linear-gradient(left, var(--microsoft-gray-lightest) 0%, var(--microsoft-gray-lighter) 20%, var(--microsoft-gray-lightest) 60%, var(--microsoft-gray-lightest) 100%);
+    background-image: -o-linear-gradient(left, var(--microsoft-gray-lightest) 0%, var(--microsoft-gray-lighter) 20%, var(--microsoft-gray-lightest) 60%, var(--microsoft-gray-lightest) 100%);
+    background-image: linear-gradient(to right, var(--microsoft-gray-lightest) 0%, var(--microsoft-gray-lighter) 20%, var(--microsoft-gray-lightest) 60%, var(--microsoft-gray-lightest) 100%);
+    background-repeat: no-repeat;
+    background-size: 200vw 200vw;
+    opacity: 0.6;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: placeholderShimmer;
+    -webkit-animation-timing-function: linear;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .capture-cycle--skeleton-title {
+    margin: 16px 16px 36px;
+    max-width: 30%;
+  }
+}
+
+@-webkit-keyframes placeholderShimmer {
+  0% {
+    background-position: -100vw 0;
+  }
+
+  100% {
+    background-position: 100vw 0;
+  }
+}

@@ -8,6 +8,31 @@
     margin: 16px;
     text-align: center;
   }
+
+  .main--header-center {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    line-height: 24px;
+    margin: 0;
+  }
+
+  .main--header-link {
+    color: var(--microsoft-blue);
+    text-decoration: none;
+  }
+
+  .main--header-link:active {
+    color: var(--microsoft-gray-darker);
+  }
+
+  .main--header-text {
+    max-width: 80%;
+    margin: 0;
+    text-align: center;
+  }
 }
 
 @media only screen and (min-width: 540px) {

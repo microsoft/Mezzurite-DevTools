@@ -1,18 +1,19 @@
-import React from 'react';
-import { arrayOf, number, shape, string } from 'prop-types';
+import React, { Fragment } from 'react';
+import { arrayOf, bool, number, shape, string } from 'prop-types';
 
 import './Main.css';
 import CaptureCycle from '../CaptureCycle/CaptureCycle';
+import MainLoading from './MainLoading';
 
 const Main = (props) => {
   const noActiveCaptureCycles = props.captureCycles != null && props.captureCycles.length === 0 && props.applicationLoadTime != null;
 
   return (
     props != null && <main className='main'>
-      {props.applicationLoadTime == null && props.captureCycles == null &&
-        <h2 className='main--header'>Mezzurite is working...</h2>
-      }
-      {props.applicationLoadTime != null && <h2 className='main--header'>App<span className='mobile-hidden'>lication</span> Load Time: {props.applicationLoadTime} ms</h2>}
+      <h2 className={props.applicationLoadTime != null || props.loading ? 'main--header' : 'main--header main--header-center'}>
+        {renderHeader(props.applicationLoadTime, props.loading)}
+      </h2>
+      {props.loading && <MainLoading />}
       {props.captureCycles != null && props.captureCycles.length > 0 && props.captureCycles.map((captureCycle, captureCycleIndex) => {
         if (captureCycle != null) {
           return (
@@ -33,6 +34,24 @@ const Main = (props) => {
   );
 };
 
+const renderHeader = (applicationLoadTime, loading) => {
+  if (applicationLoadTime == null) {
+    if (loading) {
+      return <Fragment>
+        Mezzurite is working...
+      </Fragment>;
+    } else {
+      return <span className='main--header-text'>
+        Mezzurite was not detected. Follow <a className='main--header-link' href='https://github.com/Microsoft/Mezzurite#onboarding' target='_blank'>the instructions</a> to install Mezzurite.
+      </span>;
+    }
+  } else {
+    return <Fragment>
+      App<span className='mobile-hidden'>lication</span> Load Time: {applicationLoadTime.toFixed(1)}ms
+    </Fragment>;
+  }
+};
+
 Main.propTypes = {
   applicationLoadTime: number,
   captureCycles: arrayOf(
@@ -49,7 +68,8 @@ Main.propTypes = {
       time: string,
       viewportLoadTime: number
     })
-  )
+  ),
+  loading: bool
 };
 
 export default Main;

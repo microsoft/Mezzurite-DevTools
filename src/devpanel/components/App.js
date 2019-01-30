@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       applicationLoadTime: null,
       captureCycles: null,
+      loading: true,
       framework: {
         name: null,
         version: null
@@ -21,8 +22,12 @@ class App extends Component {
   }
 
   componentDidMount () {
-    MezzuriteInspector.isMezzuritePresentAsync().then(() => {
-      MezzuriteInspector.listenForTimingEvents((event) => this.handleTimingEvent(event));
+    MezzuriteInspector.isMezzuritePresentAsync().then((mezzuritePresent) => {
+      if (mezzuritePresent) {
+        MezzuriteInspector.listenForTimingEvents((timingEvent) => this.handleTimingEvent(timingEvent));
+      } else {
+        this.setState({ loading: false });
+      }
     });
   }
 
@@ -57,6 +62,8 @@ class App extends Component {
           }
         });
       }
+
+      this.setState({ loading: false });
     }
   }
 
@@ -64,7 +71,7 @@ class App extends Component {
     return (
       <div className='app'>
         <Header />
-        <Main applicationLoadTime={this.state.applicationLoadTime} captureCycles={this.state.captureCycles} />
+        <Main applicationLoadTime={this.state.applicationLoadTime} captureCycles={this.state.captureCycles} loading={this.state.loading} />
         <Footer packageName={this.state.framework.name} packageVersion={this.state.framework.version} />
       </div>
     );
