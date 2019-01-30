@@ -9,7 +9,7 @@ module.exports = {
     background: './src/background/index.js',
     devpanel: './src/devpanel/index.js',
     devtools: './src/devtools/index.js',
-    content: './src/inject/content.js',
+    content: './src/content/index.js',
     inject: './src/inject/injected.js'
   },
   mode: 'development',
