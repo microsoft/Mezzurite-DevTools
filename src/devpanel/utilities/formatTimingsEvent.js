@@ -4,18 +4,23 @@ function formatTimingsEvent (event) {
   }
 
   let applicationLoadTime = null;
-  let allComponentData = null;
-  let componentTimings = null;
+  let insideViewportComponents = null;
+  let outsideViewportComponents = null;
+  let viewportLoadTime = null;
 
   if (event.Timings != null && Array.isArray(event.Timings)) {
     let findApplicationLoadTime = null;
+    let findInsideViewportComponents = null;
+    let findAllComponents = null;
 
     event.Timings.forEach((timing) => {
       if (timing != null) {
         if (timing.metricType === 'ALT') {
           findApplicationLoadTime = timing;
         } else if (timing.metricType === 'AllComponents') {
-          allComponentData = timing;
+          findAllComponents = timing;
+        } else if (timing.metricType === 'VLT') {
+          findInsideViewportComponents = timing;
         }
       }
     });
@@ -24,25 +29,29 @@ function formatTimingsEvent (event) {
       applicationLoadTime = findApplicationLoadTime.value;
     }
 
-    componentTimings = null;
-
-    if (allComponentData != null && allComponentData.data != null) {
-      try {
-        allComponentData = JSON.parse(allComponentData.data);
-      } catch (e) {
-        allComponentData = null;
-        console.warn('The data provided by Mezzurite could not be parsed.');
+    if (findInsideViewportComponents != null) {
+      if (findInsideViewportComponents.value != null) {
+        viewportLoadTime = findInsideViewportComponents.value;
       }
 
-      if (allComponentData != null && Array.isArray(allComponentData)) {
-        componentTimings = allComponentData.filter((component) => component != null && component.name != null && component.clt != null).map((component) => {
-          return {
-            componentName: component.name,
-            componentLoadTime: component.clt
-          };
-        }).sort((firstComponent, secondComponent) => {
-          return secondComponent.componentLoadTime - firstComponent.componentLoadTime;
-        });
+      if (findInsideViewportComponents.data != null) {
+        insideViewportComponents = formatAsComponentArray(findInsideViewportComponents.data);
+      }
+    }
+
+    if (findAllComponents != null && findAllComponents.data != null) {
+      const formattedOutsideViewportComponents = formatAsComponentArray(findAllComponents.data);
+
+      if (formattedOutsideViewportComponents != null) {
+        outsideViewportComponents = formattedOutsideViewportComponents;
+
+        if (insideViewportComponents != null) {
+          outsideViewportComponents = outsideViewportComponents.filter((component) => {
+            return !insideViewportComponents.some((viewportComponent) => {
+              return (viewportComponent.componentName === component.componentName && viewportComponent.componentLoadTime === component.componentLoadTime);
+            });
+          });
+        }
       }
     }
   }
@@ -62,14 +71,52 @@ function formatTimingsEvent (event) {
     }
   }
 
+  let routeUrl = null;
+
+  if (event.RouteUrl != null && event.RouteUrl !== '/') {
+    routeUrl = event.RouteUrl;
+  }
+
   const time = new Date().toLocaleTimeString();
 
   return {
     applicationLoadTime,
-    componentTimings,
     framework,
-    time
+    insideViewportComponents,
+    outsideViewportComponents,
+    routeUrl,
+    time,
+    viewportLoadTime
   };
+}
+
+function formatAsComponentArray (dataString) {
+  let componentsArray = null;
+
+  try {
+    componentsArray = JSON.parse(dataString);
+  } catch {
+    console.warn('The data provided by Mezzurite could not be parsed.');
+  }
+
+  if (Array.isArray(componentsArray)) {
+    componentsArray = componentsArray
+      .reduce((accumulator, component) => {
+        if (component != null && component.name != null && component.clt != null) {
+          accumulator.push({
+            componentName: component.name,
+            componentLoadTime: component.clt
+          });
+        }
+
+        return accumulator;
+      }, [])
+      .sort((firstComponent, secondComponent) => secondComponent.componentLoadTime - firstComponent.componentLoadTime);
+  } else {
+    componentsArray = null;
+  }
+
+  return componentsArray;
 }
 
 export default formatTimingsEvent;
