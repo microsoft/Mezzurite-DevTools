@@ -8,8 +8,7 @@ describe('Logo.js', () => {
 
   it('should render the logo', () => {
     const tree = renderer
-      .render(<Logo />)
-      .toJSON();
+      .render(<Logo />);
     expect(tree).toMatchSnapshot();
   });
 });

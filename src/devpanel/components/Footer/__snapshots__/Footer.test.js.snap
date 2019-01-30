@@ -11,7 +11,7 @@ exports[`Footer.js should render the footer 1`] = `
       className="github-information"
     >
       <a
-        ariaLabel="Visit Mezzurite Dev Tools on GitHub"
+        aria-label="Visit Mezzurite Dev Tools on GitHub"
         className="github-information--link"
         href="https://github.com/Microsoft/Mezzurite-DevTools"
         target="_blank"
@@ -49,7 +49,7 @@ exports[`Footer.js should render the footer 1`] = `
             Name:
           </span>
           <a
-            ariaLabel="Visit Mezzurite on GitHub"
+            aria-label="Visit Mezzurite on GitHub"
             className="github-information--package"
             href="https://github.com/Microsoft/Mezzurite"
             target="_blank"
@@ -89,7 +89,7 @@ exports[`Footer.js should render the footer with only a packageName 1`] = `
       className="github-information"
     >
       <a
-        ariaLabel="Visit Mezzurite Dev Tools on GitHub"
+        aria-label="Visit Mezzurite Dev Tools on GitHub"
         className="github-information--link"
         href="https://github.com/Microsoft/Mezzurite-DevTools"
         target="_blank"
@@ -127,7 +127,7 @@ exports[`Footer.js should render the footer with only a packageName 1`] = `
             Name:
           </span>
           <a
-            ariaLabel="Visit Mezzurite on GitHub"
+            aria-label="Visit Mezzurite on GitHub"
             className="github-information--package"
             href="https://github.com/Microsoft/Mezzurite"
             target="_blank"
@@ -152,7 +152,7 @@ exports[`Footer.js should render the footer with only a packageVersion 1`] = `
       className="github-information"
     >
       <a
-        ariaLabel="Visit Mezzurite Dev Tools on GitHub"
+        aria-label="Visit Mezzurite Dev Tools on GitHub"
         className="github-information--link"
         href="https://github.com/Microsoft/Mezzurite-DevTools"
         target="_blank"
@@ -208,7 +208,7 @@ exports[`Footer.js should render the footer without a packageName or packageVers
       className="github-information"
     >
       <a
-        ariaLabel="Visit Mezzurite Dev Tools on GitHub"
+        aria-label="Visit Mezzurite Dev Tools on GitHub"
         className="github-information--link"
         href="https://github.com/Microsoft/Mezzurite-DevTools"
         target="_blank"
