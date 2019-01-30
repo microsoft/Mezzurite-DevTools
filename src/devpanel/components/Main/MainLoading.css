@@ -18,6 +18,9 @@
 
   .shimmer {
     background: var(--microsoft-gray-lightest);
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--microsoft-gray-lightest)), color-stop(20%, var(--microsoft-gray-lighter)), color-stop(60%, var(--microsoft-gray-lightest)), to(var(--microsoft-gray-lightest)));
+    background-image: -webkit-linear-gradient(left, var(--microsoft-gray-lightest) 0%, var(--microsoft-gray-lighter) 20%, var(--microsoft-gray-lightest) 60%, var(--microsoft-gray-lightest) 100%);
+    background-image: -o-linear-gradient(left, var(--microsoft-gray-lightest) 0%, var(--microsoft-gray-lighter) 20%, var(--microsoft-gray-lightest) 60%, var(--microsoft-gray-lightest) 100%);
     background-image: linear-gradient(to right, var(--microsoft-gray-lightest) 0%, var(--microsoft-gray-lighter) 20%, var(--microsoft-gray-lightest) 60%, var(--microsoft-gray-lightest) 100%);
     background-repeat: no-repeat;
     background-size: 200vw 200vw;
