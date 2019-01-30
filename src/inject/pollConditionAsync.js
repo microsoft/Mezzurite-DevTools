@@ -10,7 +10,7 @@ function pollConditionAsync (isConditionMet, intervalMs, maxRetries) {
         resolve(true);
       } else {
         remaining--;
-        
+
         if (remaining === 0) {
           clearInterval(interval);
           resolve(false);
