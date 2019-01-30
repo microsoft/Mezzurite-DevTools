@@ -101,13 +101,16 @@ function formatAsComponentArray (dataString) {
 
   if (Array.isArray(componentsArray)) {
     componentsArray = componentsArray
-      .filter((component) => {
-        return component != null && component.name != null && component.clt != null;
-      })
-      .map((component) => ({
-        componentName: component.name,
-        componentLoadTime: component.clt
-      }))
+      .reduce((accumulator, component) => {
+        if (component != null && component.name != null && component.clt != null) {
+          accumulator.push({
+            componentName: component.name,
+            componentLoadTime: component.clt
+          });
+        }
+
+        return accumulator;
+      }, [])
       .sort((firstComponent, secondComponent) => secondComponent.componentLoadTime - firstComponent.componentLoadTime);
   } else {
     componentsArray = null;
