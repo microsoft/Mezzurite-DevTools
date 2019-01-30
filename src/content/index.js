@@ -3,7 +3,7 @@
 // like window. That is isolated. This is why we inject the
 // additional script.
 import { forwardTimingEvent, sendSimpleMessage } from './messaging';
-import injectScript from './injectScript.js';
+import injectScript from './injectScript';
 
 document.addEventListener('MezzuriteFound', () => {
   console.log('CS: Got an event: MezzuriteFound');
