@@ -5,9 +5,6 @@
  * @listens CustomEvent
  */
 function forwardTimingEvent (timingEvent) {
-  // Forward the event to the Mezzurite DevTools panel
-  console.log(`CS: Got a timing event! ${timingEvent}`);
-  console.log(timingEvent);
   chrome.runtime.sendMessage({
     action: 'timing',
     payload: timingEvent.detail
