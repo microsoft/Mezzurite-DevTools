@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import MezzuriteInspector from '../services/MezzuriteInspector';
 import formatTimingsEvent from '../utilities/formatTimingsEvent';
 import './App.css';
-import Footer from './Footer/Footer.js';
-import Header from './Header/Header.js';
-import Main from './Main/Main.js';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
+import Main from './Main/Main';
 
 class App extends Component {
   constructor (props) {
