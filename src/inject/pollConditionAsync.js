@@ -1,5 +1,5 @@
 function pollConditionAsync (isConditionMet, intervalMs, maxRetries) {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     let remaining = maxRetries;
 
     const interval = setInterval(() => {
