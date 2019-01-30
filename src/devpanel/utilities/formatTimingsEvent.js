@@ -95,7 +95,7 @@ function formatAsComponentArray (dataString) {
 
   try {
     componentsArray = JSON.parse(dataString);
-  } catch (e) {
+  } catch {
     console.warn('The data provided by Mezzurite could not be parsed.');
   }
 
