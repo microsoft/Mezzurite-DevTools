@@ -47,7 +47,7 @@ const renderHeader = (applicationLoadTime, loading) => {
     }
   } else {
     return <Fragment>
-      App<span className='mobile-hidden'>lication</span> Load Time: {applicationLoadTime} ms
+      App<span className='mobile-hidden'>lication</span> Load Time: {applicationLoadTime.toFixed(1)}ms
     </Fragment>;
   }
 };

@@ -39,8 +39,8 @@ exports[`Main.js should not error out when captureCycles contains a null element
         lication
       </span>
        Load Time: 
-      5.42
-       ms
+      5.4
+      ms
     </React.Fragment>
   </h2>
 </main>
@@ -61,8 +61,8 @@ exports[`Main.js should render when captureCycles is an empty array 1`] = `
         lication
       </span>
        Load Time: 
-      5.42
-       ms
+      5.4
+      ms
     </React.Fragment>
   </h2>
   <h3>
@@ -137,8 +137,8 @@ exports[`Main.js should render without captureCycles and loading as false 1`] = 
         lication
       </span>
        Load Time: 
-      5.42
-       ms
+      5.4
+      ms
     </React.Fragment>
   </h2>
 </main>
@@ -159,8 +159,8 @@ exports[`Main.js should render without captureCycles and loading as true 1`] = `
         lication
       </span>
        Load Time: 
-      5.42
-       ms
+      5.4
+      ms
     </React.Fragment>
   </h2>
   <MainLoading />
