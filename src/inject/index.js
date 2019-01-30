@@ -1,4 +1,4 @@
-import pollConditionAsync from './pollConditionAsync.js';
+import pollConditionAsync from './pollConditionAsync';
 import { forwardTimingEvent, sendSimpleMessage } from './messaging';
 
 const isConditionMet = () => window.mezzurite != null;

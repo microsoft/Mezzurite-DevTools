@@ -1,4 +1,4 @@
-import sendEventViaDocument from './sendEventViaDocument.js';
+import sendEventViaDocument from './sendEventViaDocument';
 
 function forwardTimingEvent (timingEvent) {
   const eventToContentScript = new CustomEvent('MezzuriteTiming_toExtension', {

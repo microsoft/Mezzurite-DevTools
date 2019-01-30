@@ -1,4 +1,4 @@
-import sendEventViaDocument from './sendEventViaDocument.js';
+import sendEventViaDocument from './sendEventViaDocument';
 
 function sendSimpleMessage (action) {
   const event = new CustomEvent(action);
