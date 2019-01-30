@@ -1,2 +1,7 @@
-export { default as forwardTimingEvent } from './forwardTimingEvent';
-export { default as sendSimpleMessage } from './sendSimpleMessage';
+import forwardTimingEvent from './forwardTimingEvent';
+import sendSimpleMessage from './sendSimpleMessage';
+
+export {
+  forwardTimingEvent,
+  sendSimpleMessage
+};
