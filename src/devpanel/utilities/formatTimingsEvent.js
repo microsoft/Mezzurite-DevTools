@@ -11,14 +11,14 @@ function formatTimingsEvent (event) {
   if (event.Timings != null && Array.isArray(event.Timings)) {
     let findApplicationLoadTime = null;
     let findInsideViewportComponents = null;
-    let findOutsideViewportComponents = null;
+    let findAllComponents = null;
 
     event.Timings.forEach((timing) => {
       if (timing != null) {
         if (timing.metricType === 'ALT') {
           findApplicationLoadTime = timing;
         } else if (timing.metricType === 'AllComponents') {
-          findOutsideViewportComponents = timing;
+          findAllComponents = timing;
         } else if (timing.metricType === 'VLT') {
           findInsideViewportComponents = timing;
         }
@@ -39,8 +39,8 @@ function formatTimingsEvent (event) {
       }
     }
 
-    if (findOutsideViewportComponents != null && findOutsideViewportComponents.data != null) {
-      const formattedOutsideViewportComponents = formatAsComponentArray(findOutsideViewportComponents.data);
+    if (findAllComponents != null && findAllComponents.data != null) {
+      const formattedOutsideViewportComponents = formatAsComponentArray(findAllComponents.data);
 
       if (formattedOutsideViewportComponents != null) {
         outsideViewportComponents = formattedOutsideViewportComponents;
