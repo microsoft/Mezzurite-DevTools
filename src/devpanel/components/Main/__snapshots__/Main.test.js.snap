@@ -61,8 +61,7 @@ exports[`Main.js should render without applicationLoadTime 1`] = `
 >
   <CaptureCycle
     captureCycleIndex={0}
-    timestamp="time"
-    timings={
+    insideViewportComponents={
       Array [
         Object {
           "componentLoadTime": 5.23,
@@ -70,6 +69,7 @@ exports[`Main.js should render without applicationLoadTime 1`] = `
         },
       ]
     }
+    timestamp="time"
   />
 </main>
 `;

@@ -34,7 +34,7 @@ describe('Main.js', () => {
     const tree = renderer
       .render(<Main captureCycles={[
         {
-          componentTimings: [
+          insideViewportComponents: [
             {
               componentLoadTime: 5.23,
               componentName: 'ComponentName'

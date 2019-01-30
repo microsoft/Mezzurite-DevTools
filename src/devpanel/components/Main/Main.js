@@ -19,8 +19,11 @@ const Main = (props) => {
             <CaptureCycle
               captureCycleIndex={captureCycleIndex}
               key={`capture-cycle-${captureCycleIndex}`}
+              insideViewportComponents={captureCycle.insideViewportComponents}
+              outsideViewportComponents={captureCycle.outsideViewportComponents}
+              routeUrl={props.routeUrl}
               timestamp={captureCycle.time}
-              timings={captureCycle.componentTimings}
+              viewportLoadTime={captureCycle.viewportLoadTime}
             />
           );
         }
@@ -34,11 +37,17 @@ Main.propTypes = {
   applicationLoadTime: number,
   captureCycles: arrayOf(
     shape({
-      componentTimings: arrayOf(shape({
+      insideViewportComponents: arrayOf(shape({
         componentLoadTime: number,
         componentName: string
       })),
-      time: string
+      outsideViewportComponents: arrayOf(shape({
+        componentLoadTime: number,
+        componentName: string
+      })),
+      routeUrl: string,
+      time: string,
+      viewportLoadTime: number
     })
   )
 };
