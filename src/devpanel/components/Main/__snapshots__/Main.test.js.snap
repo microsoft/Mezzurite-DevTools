@@ -5,20 +5,20 @@ exports[`Main.js should be loading when the props are null 1`] = `
   className="main"
 >
   <h2
-    className="main--header main--header-center"
+    className="main--header"
   >
     <span
       className="main--header-text"
     >
-      Mezzurite was not detected. Follow 
+      Mezzurite was not detected. Learn more about Mezzurite 
       <a
         className="main--header-link"
         href="https://github.com/Microsoft/Mezzurite#onboarding"
         target="_blank"
       >
-        the instructions
+        on GitHub
       </a>
-       to install Mezzurite.
+      .
     </span>
   </h2>
 </main>
@@ -28,10 +28,12 @@ exports[`Main.js should not error out when captureCycles contains a null element
 <main
   className="main"
 >
-  <h2
-    className="main--header"
+  <div
+    className="main--header-section"
   >
-    <React.Fragment>
+    <h2
+      className="main--header"
+    >
       App
       <span
         className="mobile-hidden"
@@ -41,8 +43,13 @@ exports[`Main.js should not error out when captureCycles contains a null element
        Load Time: 
       5.4
       ms
-    </React.Fragment>
-  </h2>
+    </h2>
+    <button
+      className="main--header-help"
+    >
+      Help
+    </button>
+  </div>
 </main>
 `;
 
@@ -50,10 +57,12 @@ exports[`Main.js should render when captureCycles is an empty array 1`] = `
 <main
   className="main"
 >
-  <h2
-    className="main--header"
+  <div
+    className="main--header-section"
   >
-    <React.Fragment>
+    <h2
+      className="main--header"
+    >
       App
       <span
         className="mobile-hidden"
@@ -63,8 +72,13 @@ exports[`Main.js should render when captureCycles is an empty array 1`] = `
        Load Time: 
       5.4
       ms
-    </React.Fragment>
-  </h2>
+    </h2>
+    <button
+      className="main--header-help"
+    >
+      Help
+    </button>
+  </div>
   <h3>
     No active capture cycles have completed.
   </h3>
@@ -78,9 +92,7 @@ exports[`Main.js should render with loading as true 1`] = `
   <h2
     className="main--header"
   >
-    <React.Fragment>
-      Mezzurite is working...
-    </React.Fragment>
+    Mezzurite is working...
   </h2>
   <MainLoading />
 </main>
@@ -91,20 +103,20 @@ exports[`Main.js should render without applicationLoadTime 1`] = `
   className="main"
 >
   <h2
-    className="main--header main--header-center"
+    className="main--header"
   >
     <span
       className="main--header-text"
     >
-      Mezzurite was not detected. Follow 
+      Mezzurite was not detected. Learn more about Mezzurite 
       <a
         className="main--header-link"
         href="https://github.com/Microsoft/Mezzurite#onboarding"
         target="_blank"
       >
-        the instructions
+        on GitHub
       </a>
-       to install Mezzurite.
+      .
     </span>
   </h2>
   <CaptureCycle
@@ -126,10 +138,12 @@ exports[`Main.js should render without captureCycles and loading as false 1`] = 
 <main
   className="main"
 >
-  <h2
-    className="main--header"
+  <div
+    className="main--header-section"
   >
-    <React.Fragment>
+    <h2
+      className="main--header"
+    >
       App
       <span
         className="mobile-hidden"
@@ -139,8 +153,13 @@ exports[`Main.js should render without captureCycles and loading as false 1`] = 
        Load Time: 
       5.4
       ms
-    </React.Fragment>
-  </h2>
+    </h2>
+    <button
+      className="main--header-help"
+    >
+      Help
+    </button>
+  </div>
 </main>
 `;
 
@@ -148,10 +167,12 @@ exports[`Main.js should render without captureCycles and loading as true 1`] = `
 <main
   className="main"
 >
-  <h2
-    className="main--header"
+  <div
+    className="main--header-section"
   >
-    <React.Fragment>
+    <h2
+      className="main--header"
+    >
       App
       <span
         className="mobile-hidden"
@@ -161,8 +182,13 @@ exports[`Main.js should render without captureCycles and loading as true 1`] = `
        Load Time: 
       5.4
       ms
-    </React.Fragment>
-  </h2>
+    </h2>
+    <button
+      className="main--header-help"
+    >
+      Help
+    </button>
+  </div>
   <MainLoading />
 </main>
 `;

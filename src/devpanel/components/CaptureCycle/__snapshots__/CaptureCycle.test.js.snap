@@ -185,14 +185,6 @@ exports[`CaptureCycle.js should render with a viewportLoadTime 1`] = `
           15.4
         </span>
         ms
-        <a
-          aria-label="What is viewport load time?"
-          className="capture-cycle--tooltip"
-          href="https://github.com/Microsoft/Mezzurite#viewport-load-time-vlt"
-          target="_blank"
-        >
-          ?
-        </a>
       </React.Fragment>
     }
   />
