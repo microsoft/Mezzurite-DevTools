@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelpDialog.js should render with an onCloseClick function 1`] = `
+<div
+  className="help-dialog--container"
+>
+  <div
+    className="help-dialog--content"
+  >
+    <h2
+      className="help-dialog--heading"
+    >
+      Understanding Mezzurite Metrics
+    </h2>
+    <ul
+      className="help-dialog--vocab"
+    >
+      <li
+        className="help-dialog--vocab-item"
+      >
+        <span
+          className="help-dialog--vocab-title"
+        >
+          Application Load Time (ALT)
+        </span>
+         is the amount of time it takes to load the SPA framework. This is calculated using the navigation start time and the application framework load time.
+      </li>
+      <li
+        className="help-dialog--vocab-item"
+      >
+        <span
+          className="help-dialog--vocab-title"
+        >
+          Component Load Time (CLT)
+        </span>
+         is the amount of time it takes to load a single component. This is calculated by using the framework's component life cycle.
+      </li>
+      <li
+        className="help-dialog--vocab-item"
+      >
+        <span
+          className="help-dialog--vocab-title"
+        >
+          Viewport Load Time (VLT)
+        </span>
+          is the amount of time it takes to load the components visible in the current viewport.
+      </li>
+    </ul>
+    <div
+      className="help-dialog--action"
+    >
+      <a
+        aria-label="Learn more about Mezzurite"
+        className="help-dialog--learn-more"
+        href="https://github.com/Microsoft/Mezzurite#background"
+        target="_blank"
+      >
+        Learn More
+      </a>
+      <button
+        aria-label="Close"
+        className="help-dialog--close"
+        onClick={[Function]}
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`HelpDialog.js should render without an onCloseClick function 1`] = `
+<div
+  className="help-dialog--container"
+>
+  <div
+    className="help-dialog--content"
+  >
+    <h2
+      className="help-dialog--heading"
+    >
+      Understanding Mezzurite Metrics
+    </h2>
+    <ul
+      className="help-dialog--vocab"
+    >
+      <li
+        className="help-dialog--vocab-item"
+      >
+        <span
+          className="help-dialog--vocab-title"
+        >
+          Application Load Time (ALT)
+        </span>
+         is the amount of time it takes to load the SPA framework. This is calculated using the navigation start time and the application framework load time.
+      </li>
+      <li
+        className="help-dialog--vocab-item"
+      >
+        <span
+          className="help-dialog--vocab-title"
+        >
+          Component Load Time (CLT)
+        </span>
+         is the amount of time it takes to load a single component. This is calculated by using the framework's component life cycle.
+      </li>
+      <li
+        className="help-dialog--vocab-item"
+      >
+        <span
+          className="help-dialog--vocab-title"
+        >
+          Viewport Load Time (VLT)
+        </span>
+          is the amount of time it takes to load the components visible in the current viewport.
+      </li>
+    </ul>
+    <div
+      className="help-dialog--action"
+    >
+      <a
+        aria-label="Learn more about Mezzurite"
+        className="help-dialog--learn-more"
+        href="https://github.com/Microsoft/Mezzurite#background"
+        target="_blank"
+      >
+        Learn More
+      </a>
+      <button
+        aria-label="Close"
+        className="help-dialog--close"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`;
