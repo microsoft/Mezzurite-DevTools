@@ -4,6 +4,10 @@
  * @param {string} filepath - The filepath to the script to be injected.
  */
 function injectScript (filepath) {
+  if (filepath == null) {
+    throw Error('filepath must not be null or undefined');
+  }
+
   const bodyTag = document.getElementsByTagName('body')[0];
   const scriptTag = document.createElement('script');
   scriptTag.setAttribute('type', 'text/javascript');
