@@ -6,7 +6,7 @@ describe('sendSimpleMessage.js', () => {
       runtime: {
         sendMessage: jest.fn()
       }
-    }
+    };
   });
 
   it('should throw an Error when the action parameter is null', () => {
