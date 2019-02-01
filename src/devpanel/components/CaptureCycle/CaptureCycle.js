@@ -12,12 +12,6 @@ const CaptureCycle = (props) => {
   const insideViewportHeading = 'Inside Viewport';
   const insideViewportSubheading = props.viewportLoadTime != null && <Fragment>
     Viewport Load Time: <span className='capture-cycle--statistic'>{props.viewportLoadTime.toFixed(1)}</span>ms
-    <a
-      aria-label='What is viewport load time?'
-      className='capture-cycle--tooltip'
-      href='https://github.com/Microsoft/Mezzurite#viewport-load-time-vlt'
-      target='_blank'
-    >?</a>
   </Fragment>;
   const outsideViewportHeading = 'Outside Viewport';
   const shouldRenderInsideViewportComponents = props.insideViewportComponents != null && props.insideViewportComponents.length > 0;

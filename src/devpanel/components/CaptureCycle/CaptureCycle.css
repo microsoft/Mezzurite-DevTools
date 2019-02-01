@@ -23,18 +23,6 @@
     padding: 8px 16px;
     text-align: center;
   }
-
-  .capture-cycle--tooltip {
-    background-color: var(--microsoft-blue);
-    border-radius: 16px;
-    color: var(--microsoft-white);
-    font-size: 10px;
-    font-weight: 500;
-    margin-left: 2px;
-    padding: 0 4px;
-    text-decoration: none;
-    vertical-align: text-top;
-  }
 }
 
 @media only screen and (min-width: 540px) {

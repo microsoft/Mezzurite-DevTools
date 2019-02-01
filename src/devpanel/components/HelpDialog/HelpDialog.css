@@ -1,0 +1,89 @@
+@media only screen {
+  .help-dialog--action {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .help-dialog--close {
+    background-color: var(--microsoft-blue);
+    border: none;
+    border-radius: 4px;
+    color: var(--microsoft-white);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .help-dialog--close:active,
+  .help-dialog--close:hover {
+    background-color: var(--microsoft-blue-darker);
+    cursor: pointer;
+  }
+
+  .help-dialog--container {
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    width: 100%;
+  }
+
+  .help-dialog--content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: calc(100% - 16px);
+  }
+
+  .help-dialog--heading {
+    text-align: center;
+  }
+
+  .help-dialog--learn-more {
+    background-color: var(--microsoft-gray-lightest);
+    border-radius: 4px;
+    color: var(--microsoft-blue);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .help-dialog--learn-more:active,
+  .help-dialog--learn-more:hover {
+    background-color: var(--microsoft-gray-lighter);
+  }
+
+  .help-dialog--vocab-item {
+    line-height: 18px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .help-dialog--vocab-title {
+    font-weight: 500;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .help-dialog--action {
+    flex-direction: row;
+    margin: 16px 0 8px;
+  }
+
+  .help-dialog--content {
+    max-width: 800px;
+  }
+
+  .help-dialog--learn-more {
+    margin: 0 8px 0 0;
+  }
+}

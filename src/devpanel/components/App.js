@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Modal from 'react-modal';
 
 import MezzuriteInspector from '../services/MezzuriteInspector';
 import formatTimingsEvent from '../utilities/formatTimingsEvent';
 import './App.css';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
+import HelpDialog from './HelpDialog/HelpDialog';
 import Main from './Main/Main';
 
 class App extends Component {
@@ -13,12 +15,18 @@ class App extends Component {
     this.state = {
       applicationLoadTime: null,
       captureCycles: null,
+      helpDialogOpen: false,
       loading: true,
       framework: {
         name: null,
         version: null
       }
     };
+
+    Modal.setAppElement('#root');
+
+    this.onHelpDialogClose = this.onHelpDialogClose.bind(this);
+    this.onHelpDialogOpen = this.onHelpDialogOpen.bind(this);
   }
 
   componentDidMount () {
@@ -67,12 +75,40 @@ class App extends Component {
     }
   }
 
+  onHelpDialogClose () {
+    this.setState({ helpDialogOpen: false });
+  }
+
+  onHelpDialogOpen () {
+    this.setState({ helpDialogOpen: true });
+  }
+
   render () {
     return (
       <div className='app'>
         <Header />
-        <Main applicationLoadTime={this.state.applicationLoadTime} captureCycles={this.state.captureCycles} loading={this.state.loading} />
+        <Main
+          applicationLoadTime={this.state.applicationLoadTime}
+          captureCycles={this.state.captureCycles}
+          loading={this.state.loading}
+          onHelpClick={this.onHelpDialogOpen}
+        />
         <Footer packageName={this.state.framework.name} packageVersion={this.state.framework.version} />
+        <Modal
+          isOpen={this.state.helpDialogOpen}
+          className='modal'
+          contentLabel='Help Dialog'
+          onRequestClose={this.onHelpDialogClose}
+          overlayClassName='overlay'
+          shouldFocusAfterRender
+          shouldCloseOnOverlayClick
+          shouldCloseOnEsc
+          shouldReturnFocusAfterClose
+        >
+          <HelpDialog
+            onCloseClick={this.onHelpDialogClose}
+          />
+        </Modal>
       </div>
     );
   }

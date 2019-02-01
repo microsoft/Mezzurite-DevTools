@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { arrayOf, bool, number, shape, string } from 'prop-types';
+import React from 'react';
+import { arrayOf, bool, func, number, shape, string } from 'prop-types';
 
 import './Main.css';
 import CaptureCycle from '../CaptureCycle/CaptureCycle';
@@ -10,9 +10,7 @@ const Main = (props) => {
 
   return (
     props != null && <main className='main'>
-      <h2 className={props.applicationLoadTime != null || props.loading ? 'main--header' : 'main--header main--header-center'}>
-        {renderHeader(props.applicationLoadTime, props.loading)}
-      </h2>
+      {renderHeader(props.applicationLoadTime, props.loading, props.onHelpClick)}
       {props.loading && <MainLoading />}
       {props.captureCycles != null && props.captureCycles.length > 0 && props.captureCycles.map((captureCycle, captureCycleIndex) => {
         if (captureCycle != null) {
@@ -34,21 +32,29 @@ const Main = (props) => {
   );
 };
 
-const renderHeader = (applicationLoadTime, loading) => {
+const renderHeader = (applicationLoadTime, loading, onHelpClick) => {
   if (applicationLoadTime == null) {
     if (loading) {
-      return <Fragment>
+      return <h2 className='main--header'>
         Mezzurite is working...
-      </Fragment>;
+      </h2>;
     } else {
-      return <span className='main--header-text'>
-        Mezzurite was not detected. Follow <a className='main--header-link' href='https://github.com/Microsoft/Mezzurite#onboarding' target='_blank'>the instructions</a> to install Mezzurite.
-      </span>;
+      return <h2 className='main--header'>
+        <span className='main--header-text'>
+          Mezzurite was not detected. Learn more about Mezzurite <a className='main--header-link' href='https://github.com/Microsoft/Mezzurite#onboarding' target='_blank'>on GitHub</a>.
+        </span>
+      </h2>;
     }
   } else {
-    return <Fragment>
-      App<span className='mobile-hidden'>lication</span> Load Time: {applicationLoadTime.toFixed(1)}ms
-    </Fragment>;
+    return <div className='main--header-section'>
+      <h2 className='main--header'>
+        App<span className='mobile-hidden'>lication</span> Load Time: {applicationLoadTime.toFixed(1)}ms
+      </h2>
+      <button
+        className='main--header-help'
+        onClick={onHelpClick}
+      >Help</button>
+    </div>;
   }
 };
 
@@ -69,7 +75,8 @@ Main.propTypes = {
       viewportLoadTime: number
     })
   ),
-  loading: bool
+  loading: bool,
+  onHelpClick: func
 };
 
 export default Main;
