@@ -14,7 +14,7 @@ describe('forwardTimingEvent.js', () => {
   });
 
   it('should throw an Error when the timingEvent parameter is undefined', () => {
-    expect(() => forwardTimingEvent(null)).toThrow();
+    expect(() => forwardTimingEvent(undefined)).toThrow();
   });
 
   it('should throw an Error when the timingEvent parameter is not an instance of CustomEvent', () => {
