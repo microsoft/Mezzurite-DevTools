@@ -58,6 +58,7 @@ class App extends Component {
         const captureCycle = {
           insideViewportComponents: formattedTimings.insideViewportComponents,
           outsideViewportComponents: formattedTimings.outsideViewportComponents,
+          routeUrl: formattedTimings.routeUrl,
           time: formattedTimings.time,
           viewportLoadTime: formattedTimings.viewportLoadTime
         };
