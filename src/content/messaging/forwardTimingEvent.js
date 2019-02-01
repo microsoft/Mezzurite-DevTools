@@ -5,6 +5,18 @@
  * @listens CustomEvent
  */
 function forwardTimingEvent (timingEvent) {
+  if (timingEvent == null) {
+    throw Error('timingEvent must not be null or undefined');
+  }
+
+  if (!(timingEvent instanceof CustomEvent)) {
+    throw Error('timingEvent must be an instance of CustomEvent');
+  }
+
+  if (timingEvent.detail == null) {
+    throw Error('timingEvent.detail must not be null or undefined');
+  }
+
   chrome.runtime.sendMessage({
     action: 'timing',
     payload: timingEvent.detail
