@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, bool, func, number, shape, string } from 'prop-types';
+import { arrayOf, bool, number, shape, string } from 'prop-types';
 
 import './Main.css';
 import CaptureCycle from '../CaptureCycle/CaptureCycle';
@@ -32,7 +32,7 @@ const Main = (props) => {
   );
 };
 
-const renderHeader = (applicationLoadTime, loading, onHelpClick) => {
+const renderHeader = (applicationLoadTime, loading) => {
   if (applicationLoadTime == null) {
     if (loading) {
       return <h2 className='main--header'>
@@ -69,8 +69,7 @@ Main.propTypes = {
       viewportLoadTime: number
     })
   ),
-  loading: bool,
-  onHelpClick: func
+  loading: bool
 };
 
 export default Main;
