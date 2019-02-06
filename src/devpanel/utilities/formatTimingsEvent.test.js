@@ -56,6 +56,57 @@ describe('formatTimingsEvent.js', () => {
     });
   });
 
+  describe('dimensions', () => {
+    it('should return empty dimensions when only the ViewportHeight property is null', () => {
+      expect(formatTimingsEvent({ ViewportHeight: null, ViewportWidth: 1 }).dimensions).toMatchObject({
+        height: null,
+        width: null
+      });
+    });
+
+    it('should return empty dimensions when only the ViewportHeight property is undefined', () => {
+      expect(formatTimingsEvent({ ViewportHeight: undefined, ViewportWidth: 1 }).dimensions).toMatchObject({
+        height: null,
+        width: null
+      });
+    });
+
+    it('should return empty dimensions when only the ViewportWidth property is null', () => {
+      expect(formatTimingsEvent({ ViewportHeight: 1, ViewportWidth: null }).dimensions).toMatchObject({
+        height: null,
+        width: null
+      });
+    });
+
+    it('should return empty dimensions when only the ViewportWidth property is undefined', () => {
+      expect(formatTimingsEvent({ ViewportHeight: 1, ViewportWidth: undefined }).dimensions).toMatchObject({
+        height: null,
+        width: null
+      });
+    });
+
+    it('should return empty dimensions when the ViewportHeight is the wrong format', () => {
+      expect(formatTimingsEvent({ ViewportHeight: 'test', ViewportWidth: 132 }).dimensions).toMatchObject({
+        height: null,
+        width: null
+      });
+    });
+
+    it('should return empty dimensions when the ViewportWidth is the wrong format', () => {
+      expect(formatTimingsEvent({ ViewportHeight: 153, ViewportWidth: 'wrong' }).dimensions).toMatchObject({
+        height: null,
+        width: null
+      });
+    });
+
+    it('should return the dimensions', () => {
+      expect(formatTimingsEvent({ ViewportHeight: 1.41, ViewportWidth: 5.24312 }).dimensions).toMatchObject({
+        height: 1.4,
+        width: 5.2
+      });
+    });
+  });
+
   describe('framework', () => {
     it('should return an empty framework when the Framework property is null', () => {
       expect(formatTimingsEvent({ Framework: null }).framework).toMatchObject({
