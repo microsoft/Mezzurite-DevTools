@@ -24,7 +24,7 @@ exports[`Footer.js should render the footer 1`] = `
           <span
             className="tablet-hidden"
           >
-             ~ The Mezzurite Development Team
+             - The Mezzurite Development Team
           </span>
         </span>
       </a>
@@ -102,7 +102,7 @@ exports[`Footer.js should render the footer with only a packageName 1`] = `
           <span
             className="tablet-hidden"
           >
-             ~ The Mezzurite Development Team
+             - The Mezzurite Development Team
           </span>
         </span>
       </a>
@@ -165,7 +165,7 @@ exports[`Footer.js should render the footer with only a packageVersion 1`] = `
           <span
             className="tablet-hidden"
           >
-             ~ The Mezzurite Development Team
+             - The Mezzurite Development Team
           </span>
         </span>
       </a>
@@ -221,7 +221,7 @@ exports[`Footer.js should render the footer without a packageName or packageVers
           <span
             className="tablet-hidden"
           >
-             ~ The Mezzurite Development Team
+             - The Mezzurite Development Team
           </span>
         </span>
       </a>

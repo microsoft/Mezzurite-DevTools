@@ -1,7 +1,7 @@
 @media only screen {
   .component-timing--card {
     align-items: center;
-    background-color: var(--microsoft-blue-lighter);
+    background-color: var(--color-gray-darker);
     border-radius: 4px;
     display: flex;
     justify-content: space-between;

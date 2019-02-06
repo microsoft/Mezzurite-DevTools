@@ -1,14 +1,15 @@
 :root {
   --box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
   --color-black: #000;
-  --color-grey-darkest: #363b44;
+  --color-blue: #0078d7;
+  --color-blue-darker: #005a9e;
+  --color-gray-darkest: #363b44;
   --color-gray-darker: #616b77;
   --color-gray-lighter: #f7f7f7;
   --color-white: #fff;
   --color-yellow: #f9bb10;
 
-  background-color: var(--microsoft-gray-lightest);
-  color: var(--microsoft-gray-darkest);
+  background-color: var(--color-gray-lighter);
   font-family: "Segoe UI", "SegoeUI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100%;
 }
