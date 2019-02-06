@@ -56,6 +56,21 @@ function formatTimingsEvent (event) {
     }
   }
 
+  const dimensions = {
+    height: null,
+    width: null
+  };
+
+  if (
+    event.ViewportHeight != null &&
+    !isNaN(event.ViewportHeight) &&
+    event.ViewportWidth != null &&
+    !isNaN(event.ViewportWidth)
+  ) {
+    dimensions.height = parseFloat(event.ViewportHeight.toFixed(1));
+    dimensions.width = parseFloat(event.ViewportWidth.toFixed(1));
+  }
+
   const framework = {
     name: null,
     version: null
@@ -81,6 +96,7 @@ function formatTimingsEvent (event) {
 
   return {
     applicationLoadTime,
+    dimensions,
     framework,
     insideViewportComponents,
     outsideViewportComponents,
