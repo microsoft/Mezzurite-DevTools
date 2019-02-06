@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 
-import MezzuriteInspector from '../services/MezzuriteInspector';
+import Connection from '../utilities/Connection';
+import composeEventHandlers from '../utilities/composeEventHandlers';
 import formatTimingsEvent from '../utilities/formatTimingsEvent';
+
 import './App.css';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
@@ -30,12 +32,27 @@ class App extends Component {
   }
 
   componentDidMount () {
-    MezzuriteInspector.isMezzuritePresentAsync().then((mezzuritePresent) => {
-      if (mezzuritePresent) {
-        MezzuriteInspector.listenForTimingEvents((timingEvent) => this.handleTimingEvent(timingEvent));
-      } else {
-        this.setState({ loading: false });
-      }
+    // Obtain the inspected window's tab ID
+    // TODO: this should honestly be passed into App as a prop...
+    const inspectedWindowTabId = chrome.devtools.inspectedWindow.tabId;
+
+    // Set up the background page connection
+    const backgroundPageConnection = new Connection();
+    backgroundPageConnection.connect('devtools-page');
+
+    // Set up the event handlers
+    const topicToHandlers = {
+      timing: (event) => this.handleTimingEvent(event)
+    };
+    const keyTopic = 'action';
+    const keyData = 'payload';
+    const composedTopicHandler = composeEventHandlers(topicToHandlers, keyTopic, keyData);
+    backgroundPageConnection.addListener(composedTopicHandler);
+
+    // Notify the background page that we are ready to receive events
+    backgroundPageConnection.postMessage({
+      action: 'init',
+      tabId: inspectedWindowTabId
     });
   }
 
