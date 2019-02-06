@@ -31,8 +31,8 @@ describe('Connection.js', () => {
     it('should call chrome.runtime.connect with the provided parameters', () => {
       const connection = new Connection();
       const expectedSourceName = 'abc';
-      const expectedArg = { name: expectedSourceName};
-      
+      const expectedArg = { name: expectedSourceName };
+
       connection.connect(expectedSourceName);
 
       expect(global.chrome.runtime.connect).toHaveBeenCalledTimes(1);
@@ -42,7 +42,7 @@ describe('Connection.js', () => {
     it('should throw an Error when it is called when an existing connection is active', () => {
       const connection = new Connection();
       connection.connect('abc');
-      
+
       expect(() => connection.connect('xyz')).toThrow();
     });
   });
@@ -71,9 +71,9 @@ describe('Connection.js', () => {
     it('should register an event listener on the active connection', () => {
       const connection = new Connection();
       connection.connect('abc');
-      
+
       const callback = jest.fn();
-      connection.addListener(callback)
+      connection.addListener(callback);
 
       expect(global.port.onMessage.addListener).toHaveBeenCalledTimes(1);
       expect(global.port.onMessage.addListener).toHaveBeenCalledWith(callback);
@@ -97,9 +97,9 @@ describe('Connection.js', () => {
     it('should remove the event listener on the active connection', () => {
       const connection = new Connection();
       connection.connect('abc');
-      
+
       const callback = jest.fn();
-      connection.addListener(callback)
+      connection.addListener(callback);
 
       connection.removeListener();
 

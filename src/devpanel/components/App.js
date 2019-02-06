@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 
 import Connection from '../utilities/Connection';
-import Subscriber from '../utilities/Subscriber';
+import composeEventHandlers from '../utilities/composeEventHandlers';
 import formatTimingsEvent from '../utilities/formatTimingsEvent';
 
 import './App.css';
@@ -40,11 +40,14 @@ class App extends Component {
     const backgroundPageConnection = new Connection();
     backgroundPageConnection.connect('devtools-page');
 
-    // Set up handlers for events or topics of interest that may come through the background page connection
-    // TODO: add handlers for events that indicate whether or not Mezzurite was found, which are currently available
-    const subscriber = new Subscriber(backgroundPageConnection);
-    subscriber.connect();
-    subscriber.subscribeToTopic('timing', timingEvent => this.handleTimingEvent(timingEvent));
+    // Set up the event handlers
+    const topicToHandlers = {
+      timing: (event) => this.handleTimingEvent(event)
+    };
+    const keyTopic = 'action';
+    const keyData = 'payload';
+    const composedTopicHandler = composeEventHandlers(topicToHandlers, keyTopic, keyData);
+    backgroundPageConnection.addListener(composedTopicHandler);
 
     // Notify the background page that we are ready to receive events
     backgroundPageConnection.postMessage({
