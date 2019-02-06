@@ -11,7 +11,7 @@
   }
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 640px) {
   .logo {
     padding: 4px;
   }

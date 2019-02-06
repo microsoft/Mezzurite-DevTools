@@ -2,7 +2,7 @@ import React from 'react';
 
 const GithubMark = props => (
   <svg
-    className='prefix__octicon prefix__octicon-mark-github'
+    className='prefix__octicon prefix__octicon-mark-github github-mark'
     viewBox='0 0 16 16'
     aria-hidden='true'
     {...props}

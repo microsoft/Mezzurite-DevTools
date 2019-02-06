@@ -5,7 +5,7 @@ import './CaptureCycle.css';
 import CaptureCycleSection from '../CaptureCycleSection/CaptureCycleSection';
 
 const CaptureCycle = (props) => {
-  const captureCycleHeader = <h2 className='capture-cycle--timestamp'>
+  const captureCycleHeader = <h2 className='capture-cycle--header'>
     {props.routeUrl == null ? 'Capture Cycle' : props.routeUrl}
     {props.timestamp != null && <span> at {props.timestamp}:</span>}
   </h2>;
@@ -19,23 +19,25 @@ const CaptureCycle = (props) => {
 
   return (
     props != null && (shouldRenderInsideViewportComponents || shouldRenderOutsideViewportComponents) &&
-    <section className='capture-cycle--card'>
+    <section>
       {captureCycleHeader}
-      {shouldRenderInsideViewportComponents &&
-        <CaptureCycleSection
-          captureCycleIndex={props.captureCycleIndex}
-          components={props.insideViewportComponents}
-          heading={insideViewportHeading}
-          subheading={insideViewportSubheading}
-        />
-      }
-      {shouldRenderOutsideViewportComponents &&
-        <CaptureCycleSection
-          captureCycleIndex={props.captureCycleIndex}
-          components={props.outsideViewportComponents}
-          heading={outsideViewportHeading}
-        />
-      }
+      <div className='capture-cycle--card'>
+        {shouldRenderInsideViewportComponents &&
+          <CaptureCycleSection
+            captureCycleIndex={props.captureCycleIndex}
+            components={props.insideViewportComponents}
+            heading={insideViewportHeading}
+            subheading={insideViewportSubheading}
+          />
+        }
+        {shouldRenderOutsideViewportComponents &&
+          <CaptureCycleSection
+            captureCycleIndex={props.captureCycleIndex}
+            components={props.outsideViewportComponents}
+            heading={outsideViewportHeading}
+          />
+        }
+      </div>
     </section>
   );
 };

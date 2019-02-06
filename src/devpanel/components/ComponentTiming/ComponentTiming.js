@@ -7,11 +7,7 @@ const ComponentTiming = (props) => (
   props != null && (props.name != null || props.loadTime != null) && <li className='component-timing--card'>
     {props.name != null && <h4 className='component-timing--name'>{props.name}</h4>}
     {props.loadTime != null &&
-      <p className='component-timing--detail'>
-        <span className='mobile-hidden'>Load time:</span>
-        <span className='component-timing--statistic'>{props.loadTime.toFixed(1)}</span>
-        ms
-      </p>}
+      <p className='component-timing--detail'><span className='mobile-hidden component-timing--label'>Load time:</span>{props.loadTime.toFixed(1)} ms</p>}
   </li>
 );
 
