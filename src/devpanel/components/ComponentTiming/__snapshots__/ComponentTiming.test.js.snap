@@ -13,11 +13,10 @@ exports[`ComponentTiming.js should render the componentTiming 1`] = `
     className="component-timing--detail"
   >
     <span
-      className="mobile-hidden"
+      className="mobile-hidden component-timing--label"
     >
       Load time:
     </span>
-     
     14.2
      ms
   </p>
@@ -32,11 +31,10 @@ exports[`ComponentTiming.js should render the componentTiming with only a loadTi
     className="component-timing--detail"
   >
     <span
-      className="mobile-hidden"
+      className="mobile-hidden component-timing--label"
     >
       Load time:
     </span>
-     
     14.2
      ms
   </p>

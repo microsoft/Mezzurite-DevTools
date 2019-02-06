@@ -18,13 +18,19 @@
     margin: 16px;
   }
 
+  .component-timing--label {
+    margin-right: 4px;
+  }
+
   .component-timing--name {
     font-size: 15px;
     font-weight: 500;
     line-height: 18px;
     margin: 16px;
     overflow: hidden;
+    text-align: left;
     text-overflow: ellipsis;
+    width: 50%;
   }
 }
 
