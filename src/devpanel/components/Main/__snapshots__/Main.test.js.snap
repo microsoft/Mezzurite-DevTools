@@ -28,28 +28,19 @@ exports[`Main.js should not error out when captureCycles contains a null element
 <main
   className="main"
 >
-  <div
-    className="main--header-section"
+  <h2
+    className="main--header"
   >
-    <h2
-      className="main--header"
+    App
+    <span
+      className="mobile-hidden"
     >
-      App
-      <span
-        className="mobile-hidden"
-      >
-        lication
-      </span>
-       Load Time: 
-      5.4
-      ms
-    </h2>
-    <button
-      className="main--header-help"
-    >
-      Help
-    </button>
-  </div>
+      lication
+    </span>
+     Load Time: 
+    5.4
+    ms
+  </h2>
 </main>
 `;
 
@@ -57,28 +48,19 @@ exports[`Main.js should render when captureCycles is an empty array 1`] = `
 <main
   className="main"
 >
-  <div
-    className="main--header-section"
+  <h2
+    className="main--header"
   >
-    <h2
-      className="main--header"
+    App
+    <span
+      className="mobile-hidden"
     >
-      App
-      <span
-        className="mobile-hidden"
-      >
-        lication
-      </span>
-       Load Time: 
-      5.4
-      ms
-    </h2>
-    <button
-      className="main--header-help"
-    >
-      Help
-    </button>
-  </div>
+      lication
+    </span>
+     Load Time: 
+    5.4
+    ms
+  </h2>
   <h3>
     No active capture cycles have completed.
   </h3>
@@ -138,28 +120,19 @@ exports[`Main.js should render without captureCycles and loading as false 1`] = 
 <main
   className="main"
 >
-  <div
-    className="main--header-section"
+  <h2
+    className="main--header"
   >
-    <h2
-      className="main--header"
+    App
+    <span
+      className="mobile-hidden"
     >
-      App
-      <span
-        className="mobile-hidden"
-      >
-        lication
-      </span>
-       Load Time: 
-      5.4
-      ms
-    </h2>
-    <button
-      className="main--header-help"
-    >
-      Help
-    </button>
-  </div>
+      lication
+    </span>
+     Load Time: 
+    5.4
+    ms
+  </h2>
 </main>
 `;
 
@@ -167,28 +140,19 @@ exports[`Main.js should render without captureCycles and loading as true 1`] = `
 <main
   className="main"
 >
-  <div
-    className="main--header-section"
+  <h2
+    className="main--header"
   >
-    <h2
-      className="main--header"
+    App
+    <span
+      className="mobile-hidden"
     >
-      App
-      <span
-        className="mobile-hidden"
-      >
-        lication
-      </span>
-       Load Time: 
-      5.4
-      ms
-    </h2>
-    <button
-      className="main--header-help"
-    >
-      Help
-    </button>
-  </div>
+      lication
+    </span>
+     Load Time: 
+    5.4
+    ms
+  </h2>
   <MainLoading />
 </main>
 `;

@@ -1,20 +1,16 @@
 @media only screen {
   .footer--content {
     align-items: center;
-    background-color: var(--microsoft-gray-darker);
-    color: var(--microsoft-white);
+    background-color: var(--color-gray-darkest);
+    color: var(--color-white);
     display: flex;
     flex-direction: column;
-  }
-
-  .github-information {
-    padding: 8px 0 4px;
   }
 
   .github-information--link,
   .github-information--package {
     align-items: center;
-    color: var(--microsoft-white);
+    color: var(--color-white);
     display: flex;
     flex-direction: row;
     text-decoration: none;
@@ -28,8 +24,13 @@
   .github-information--package:hover,
   .github-information--text:active,
   .github-information--text:hover {
-    color: var(--microsoft-gray-lighter);
     text-decoration: underline;
+  }
+
+  .github-mark {
+    height: 28px;
+    margin: 8px 8px 8px 16px;
+    width: 28px;
   }
 
   .package-information {
@@ -70,7 +71,7 @@
   }
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 640px) {
   .footer--content {
     flex-direction: row;
     justify-content: space-between;

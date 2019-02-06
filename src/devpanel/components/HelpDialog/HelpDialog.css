@@ -8,10 +8,10 @@
   }
 
   .help-dialog--close {
-    background-color: var(--microsoft-blue);
+    background-color: var(--color-blue);
     border: none;
     border-radius: 4px;
-    color: var(--microsoft-white);
+    color: var(--color-white);
     font-size: 14px;
     font-weight: 600;
     padding: 10px 0;
@@ -20,8 +20,9 @@
 
   .help-dialog--close:active,
   .help-dialog--close:hover {
-    background-color: var(--microsoft-blue-darker);
+    background-color: var(--color-blue-darker);
     cursor: pointer;
+    text-transform: underline;
   }
 
   .help-dialog--container {
@@ -44,24 +45,6 @@
     text-align: center;
   }
 
-  .help-dialog--learn-more {
-    background-color: var(--microsoft-gray-lightest);
-    border-radius: 4px;
-    color: var(--microsoft-blue);
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0 0 8px;
-    padding: 10px 0;
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-  }
-
-  .help-dialog--learn-more:active,
-  .help-dialog--learn-more:hover {
-    background-color: var(--microsoft-gray-lighter);
-  }
-
   .help-dialog--vocab-item {
     line-height: 18px;
     margin-bottom: 20px;
@@ -73,7 +56,7 @@
   }
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 640px) {
   .help-dialog--action {
     flex-direction: row;
     margin: 16px 0 8px;

@@ -7,7 +7,7 @@ import GithubMark from './GithubMark';
 const Footer = (props) => (
   <footer role='contentinfo'>
     <ul className='footer--content'>
-      <li className='github-information'>
+      <li>
         <a
           aria-label='Visit Mezzurite Dev Tools on GitHub'
           className='github-information--link'
@@ -15,7 +15,7 @@ const Footer = (props) => (
           target='_blank'
         >
           <GithubMark />
-          <span className='github-information--text'>Visit us on GitHub!<span className='tablet-hidden'> ~ The Mezzurite Development Team</span></span>
+          <span className='github-information--text'>Visit us on GitHub<span className='tablet-hidden'> - The Mezzurite Development Team</span></span>
         </a>
       </li>
       <li className='package-information'>

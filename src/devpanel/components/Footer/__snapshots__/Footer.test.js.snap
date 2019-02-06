@@ -7,9 +7,7 @@ exports[`Footer.js should render the footer 1`] = `
   <ul
     className="footer--content"
   >
-    <li
-      className="github-information"
-    >
+    <li>
       <a
         aria-label="Visit Mezzurite Dev Tools on GitHub"
         className="github-information--link"
@@ -20,11 +18,11 @@ exports[`Footer.js should render the footer 1`] = `
         <span
           className="github-information--text"
         >
-          Visit us on GitHub!
+          Visit us on GitHub
           <span
             className="tablet-hidden"
           >
-             ~ The Mezzurite Development Team
+             - The Mezzurite Development Team
           </span>
         </span>
       </a>
@@ -85,9 +83,7 @@ exports[`Footer.js should render the footer with only a packageName 1`] = `
   <ul
     className="footer--content"
   >
-    <li
-      className="github-information"
-    >
+    <li>
       <a
         aria-label="Visit Mezzurite Dev Tools on GitHub"
         className="github-information--link"
@@ -98,11 +94,11 @@ exports[`Footer.js should render the footer with only a packageName 1`] = `
         <span
           className="github-information--text"
         >
-          Visit us on GitHub!
+          Visit us on GitHub
           <span
             className="tablet-hidden"
           >
-             ~ The Mezzurite Development Team
+             - The Mezzurite Development Team
           </span>
         </span>
       </a>
@@ -148,9 +144,7 @@ exports[`Footer.js should render the footer with only a packageVersion 1`] = `
   <ul
     className="footer--content"
   >
-    <li
-      className="github-information"
-    >
+    <li>
       <a
         aria-label="Visit Mezzurite Dev Tools on GitHub"
         className="github-information--link"
@@ -161,11 +155,11 @@ exports[`Footer.js should render the footer with only a packageVersion 1`] = `
         <span
           className="github-information--text"
         >
-          Visit us on GitHub!
+          Visit us on GitHub
           <span
             className="tablet-hidden"
           >
-             ~ The Mezzurite Development Team
+             - The Mezzurite Development Team
           </span>
         </span>
       </a>
@@ -204,9 +198,7 @@ exports[`Footer.js should render the footer without a packageName or packageVers
   <ul
     className="footer--content"
   >
-    <li
-      className="github-information"
-    >
+    <li>
       <a
         aria-label="Visit Mezzurite Dev Tools on GitHub"
         className="github-information--link"
@@ -217,11 +209,11 @@ exports[`Footer.js should render the footer without a packageName or packageVers
         <span
           className="github-information--text"
         >
-          Visit us on GitHub!
+          Visit us on GitHub
           <span
             className="tablet-hidden"
           >
-             ~ The Mezzurite Development Team
+             - The Mezzurite Development Team
           </span>
         </span>
       </a>

@@ -17,14 +17,14 @@
   }
 
   .shimmer {
-    background: var(--microsoft-gray-lightest);
-    background-image: -webkit-gradient(linear, left top, right top, from(var(--microsoft-gray-lightest)), color-stop(20%, var(--microsoft-gray-lighter)), color-stop(60%, var(--microsoft-gray-lightest)), to(var(--microsoft-gray-lightest)));
-    background-image: -webkit-linear-gradient(left, var(--microsoft-gray-lightest) 0%, var(--microsoft-gray-lighter) 20%, var(--microsoft-gray-lightest) 60%, var(--microsoft-gray-lightest) 100%);
-    background-image: -o-linear-gradient(left, var(--microsoft-gray-lightest) 0%, var(--microsoft-gray-lighter) 20%, var(--microsoft-gray-lightest) 60%, var(--microsoft-gray-lightest) 100%);
-    background-image: linear-gradient(to right, var(--microsoft-gray-lightest) 0%, var(--microsoft-gray-lighter) 20%, var(--microsoft-gray-lightest) 60%, var(--microsoft-gray-lightest) 100%);
+    background: var(--color-gray-darker);
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--color-gray-darker)), color-stop(20%, var(--color-gray-darkest)), color-stop(60%, var(--color-gray-darker)), to(var(--color-gray-darker)));
+    background-image: -webkit-linear-gradient(left, var(--color-gray-darker) 0%, var(--color-gray-darkest) 20%, var(--color-gray-darker) 60%, var(--color-gray-darker) 100%);
+    background-image: -o-linear-gradient(left, var(--color-gray-darker) 0%, var(--color-gray-darkest) 20%, var(--color-gray-darker) 60%, var(--color-gray-darker) 100%);
+    background-image: linear-gradient(to right, var(--color-gray-darker) 0%, var(--color-gray-darkest) 20%, var(--color-gray-darker) 60%, var(--color-gray-darker) 100%);
     background-repeat: no-repeat;
     background-size: 200vw 200vw;
-    opacity: 0.6;
+    opacity: 0.3;
     -webkit-animation-duration: 2s;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation-iteration-count: infinite;
@@ -33,7 +33,7 @@
   }
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 640px) {
   .capture-cycle--skeleton-title {
     margin: 16px 16px 36px;
     max-width: 30%;
