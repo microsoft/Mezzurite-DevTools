@@ -20,7 +20,7 @@ const Main = (props) => {
               key={`capture-cycle-${captureCycleIndex}`}
               insideViewportComponents={captureCycle.insideViewportComponents}
               outsideViewportComponents={captureCycle.outsideViewportComponents}
-              routeUrl={props.routeUrl}
+              routeUrl={captureCycle.routeUrl}
               timestamp={captureCycle.time}
               viewportLoadTime={captureCycle.viewportLoadTime}
             />
