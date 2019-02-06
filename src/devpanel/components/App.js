@@ -31,7 +31,7 @@ class App extends Component {
     this.onHelpDialogOpen = this.onHelpDialogOpen.bind(this);
   }
 
-  componentDidMount () {    
+  componentDidMount () {
     // Obtain the inspected window's tab ID
     // TODO: this should honestly be passed into App as a prop...
     const inspectedWindowTabId = chrome.devtools.inspectedWindow.tabId;
