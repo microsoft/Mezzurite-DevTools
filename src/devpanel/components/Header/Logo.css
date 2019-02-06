@@ -1,10 +1,10 @@
 @media only screen {
   .logo-inner {
-    fill: var(--microsoft-white);
+    fill: var(--color-yellow);
   }
 
   .logo {
-    background-color: var(--microsoft-orange);
+    background-color: var(--color-gray-darkest);
     border-radius: 16px;
     margin-right: 8px;
     padding: 2px;

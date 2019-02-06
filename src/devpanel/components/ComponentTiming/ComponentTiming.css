@@ -1,8 +1,9 @@
 @media only screen {
   .component-timing--card {
     align-items: center;
-    background-color: var(--microsoft-blue-lighter);
+    background-color: var(--color-gray-darker);
     border-radius: 4px;
+    color: var(--color-white);
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;

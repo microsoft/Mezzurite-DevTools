@@ -8,7 +8,7 @@
 
   .modal {
     align-items: center;
-    background-color: var(--microsoft-white);
+    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
     height: 100%;

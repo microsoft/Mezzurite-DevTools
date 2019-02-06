@@ -19,27 +19,6 @@
     margin: 0;
   }
 
-  .main--header-help {
-    background-color: var(--microsoft-gray-lightest);
-    border: none;
-    color: var(--microsoft-blue);
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    margin-right: 16px;
-    padding: 0;
-    text-align: center;
-  }
-
-  .main--header-link {
-    color: var(--microsoft-blue);
-    text-decoration: none;
-  }
-
-  .main--header-link:active {
-    color: var(--microsoft-gray-darker);
-  }
-
   .main--header-section {
     align-items: center;
     display: flex;

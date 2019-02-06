@@ -1,8 +1,7 @@
 @media only screen {
   .header {
     align-items: center;
-    background-color: var(--microsoft-gray-darkest);
-    color: var(--microsoft-white);
+    background-color: var(--color-white);
     display: flex;
     justify-content: center;
     padding: 10px;
