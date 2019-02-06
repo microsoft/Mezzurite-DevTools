@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 
-import MezzuriteInspector from '../services/MezzuriteInspector';
+import Connection from '../utilities/Connection';
+import Subscriber from '../utilities/Subscriber';
 import formatTimingsEvent from '../utilities/formatTimingsEvent';
+
 import './App.css';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
@@ -29,13 +31,25 @@ class App extends Component {
     this.onHelpDialogOpen = this.onHelpDialogOpen.bind(this);
   }
 
-  componentDidMount () {
-    MezzuriteInspector.isMezzuritePresentAsync().then((mezzuritePresent) => {
-      if (mezzuritePresent) {
-        MezzuriteInspector.listenForTimingEvents((timingEvent) => this.handleTimingEvent(timingEvent));
-      } else {
-        this.setState({ loading: false });
-      }
+  componentDidMount () {    
+    // Obtain the inspected window's tab ID
+    // TODO: this should honestly be passed into App as a prop...
+    const inspectedWindowTabId = chrome.devtools.inspectedWindow.tabId;
+
+    // Set up the background page connection
+    const backgroundPageConnection = new Connection();
+    backgroundPageConnection.connect('devtools-page');
+
+    // Set up handlers for events or topics of interest that may come through the background page connection
+    // TODO: add handlers for events that indicate whether or not Mezzurite was found, which are currently available
+    const subscriber = new Subscriber(backgroundPageConnection);
+    subscriber.connect();
+    subscriber.subscribeToTopic('timing', timingEvent => this.handleTimingEvent(timingEvent));
+
+    // Notify the background page that we are ready to receive events
+    backgroundPageConnection.postMessage({
+      action: 'init',
+      tabId: inspectedWindowTabId
     });
   }
 

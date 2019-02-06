@@ -14,7 +14,17 @@ class Subscriber {
   }
 
   connect () {
-    this.connection.addListener(this._handleMessages);
+    this.connection.addListener(message => {
+      const action = message.action;
+      for (const [topic, callback] of this.topicToHandlerMap.entries()) {
+        if (topic === action) {
+          callback(message.payload);
+          // Keys are unique, so once we find a matching key,
+          // there's no need to keep iterating.
+          break;
+        }
+      }
+    });
   }
 
   disconnect () {
