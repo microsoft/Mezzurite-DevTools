@@ -3,7 +3,7 @@
 exports[`GithubMark.js should render the Github logo 1`] = `
 <svg
   aria-hidden="true"
-  className="prefix__octicon prefix__octicon-mark-github"
+  className="prefix__octicon prefix__octicon-mark-github github-mark"
   viewBox="0 0 16 16"
 >
   <path

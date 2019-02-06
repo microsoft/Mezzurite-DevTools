@@ -1,128 +1,134 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CaptureCycle.js should render when there are both insideViewportComponents and outsideViewportComponents 1`] = `
-<section
-  className="capture-cycle--card"
->
+<section>
   <h2
-    className="capture-cycle--timestamp"
+    className="capture-cycle--header"
   >
     Capture Cycle
   </h2>
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Inside Viewport"
-    subheading={false}
-  />
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Outside Viewport"
-  />
+  <div
+    className="capture-cycle--card"
+  >
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Inside Viewport"
+      subheading={false}
+    />
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Outside Viewport"
+    />
+  </div>
 </section>
 `;
 
 exports[`CaptureCycle.js should render when there are only insideViewportComponents 1`] = `
-<section
-  className="capture-cycle--card"
->
+<section>
   <h2
-    className="capture-cycle--timestamp"
+    className="capture-cycle--header"
   >
     Capture Cycle
   </h2>
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Inside Viewport"
-    subheading={false}
-  />
+  <div
+    className="capture-cycle--card"
+  >
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Inside Viewport"
+      subheading={false}
+    />
+  </div>
 </section>
 `;
 
 exports[`CaptureCycle.js should render when there are only outsideViewportComponents 1`] = `
-<section
-  className="capture-cycle--card"
->
+<section>
   <h2
-    className="capture-cycle--timestamp"
+    className="capture-cycle--header"
   >
     Capture Cycle
   </h2>
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Outside Viewport"
-  />
+  <div
+    className="capture-cycle--card"
+  >
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Outside Viewport"
+    />
+  </div>
 </section>
 `;
 
 exports[`CaptureCycle.js should render with a routeUrl 1`] = `
-<section
-  className="capture-cycle--card"
->
+<section>
   <h2
-    className="capture-cycle--timestamp"
+    className="capture-cycle--header"
   >
     routeUrl
   </h2>
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Inside Viewport"
-    subheading={false}
-  />
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Outside Viewport"
-  />
+  <div
+    className="capture-cycle--card"
+  >
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Inside Viewport"
+      subheading={false}
+    />
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Outside Viewport"
+    />
+  </div>
 </section>
 `;
 
 exports[`CaptureCycle.js should render with a timestamp 1`] = `
-<section
-  className="capture-cycle--card"
->
+<section>
   <h2
-    className="capture-cycle--timestamp"
+    className="capture-cycle--header"
   >
     Capture Cycle
     <span>
@@ -131,83 +137,87 @@ exports[`CaptureCycle.js should render with a timestamp 1`] = `
       :
     </span>
   </h2>
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Inside Viewport"
-    subheading={false}
-  />
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Outside Viewport"
-  />
+  <div
+    className="capture-cycle--card"
+  >
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Inside Viewport"
+      subheading={false}
+    />
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Outside Viewport"
+    />
+  </div>
 </section>
 `;
 
 exports[`CaptureCycle.js should render with a viewportLoadTime 1`] = `
-<section
-  className="capture-cycle--card"
->
+<section>
   <h2
-    className="capture-cycle--timestamp"
+    className="capture-cycle--header"
   >
     Capture Cycle
   </h2>
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Inside Viewport"
-    subheading={
-      <React.Fragment>
-        Viewport Load Time: 
-        <span
-          className="capture-cycle--statistic"
-        >
-          15.4
-        </span>
-        ms
-      </React.Fragment>
-    }
-  />
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Outside Viewport"
-  />
+  <div
+    className="capture-cycle--card"
+  >
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Inside Viewport"
+      subheading={
+        <React.Fragment>
+          Viewport Load Time: 
+          <span
+            className="capture-cycle--statistic"
+          >
+            15.4
+          </span>
+          ms
+        </React.Fragment>
+      }
+    />
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Outside Viewport"
+    />
+  </div>
 </section>
 `;
 
 exports[`CaptureCycle.js should render with both a routeUrl and timestamp 1`] = `
-<section
-  className="capture-cycle--card"
->
+<section>
   <h2
-    className="capture-cycle--timestamp"
+    className="capture-cycle--header"
   >
     routeUrl
     <span>
@@ -216,28 +226,32 @@ exports[`CaptureCycle.js should render with both a routeUrl and timestamp 1`] = 
       :
     </span>
   </h2>
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Inside Viewport"
-    subheading={false}
-  />
-  <CaptureCycleSection
-    components={
-      Array [
-        Object {
-          "componentLoadTime": 12.2,
-          "componentName": "componentName",
-        },
-      ]
-    }
-    heading="Outside Viewport"
-  />
+  <div
+    className="capture-cycle--card"
+  >
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Inside Viewport"
+      subheading={false}
+    />
+    <CaptureCycleSection
+      components={
+        Array [
+          Object {
+            "componentLoadTime": 12.2,
+            "componentName": "componentName",
+          },
+        ]
+      }
+      heading="Outside Viewport"
+    />
+  </div>
 </section>
 `;

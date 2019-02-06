@@ -10,7 +10,6 @@
   --color-yellow: #f9bb10;
 
   background-color: var(--color-gray-lighter);
-  font-family: "Segoe UI", "SegoeUI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100%;
 }
 
@@ -20,7 +19,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .tablet-hidden {
     display: none;
   }

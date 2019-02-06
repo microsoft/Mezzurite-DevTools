@@ -46,15 +46,9 @@ const renderHeader = (applicationLoadTime, loading, onHelpClick) => {
       </h2>;
     }
   } else {
-    return <div className='main--header-section'>
-      <h2 className='main--header'>
-        App<span className='mobile-hidden'>lication</span> Load Time: {applicationLoadTime.toFixed(1)}ms
-      </h2>
-      <button
-        className='main--header-help'
-        onClick={onHelpClick}
-      >Help</button>
-    </div>;
+    return <h2 className='main--header'>
+      App<span className='mobile-hidden'>lication</span> Load Time: {applicationLoadTime.toFixed(1)}ms
+    </h2>;
   }
 };
 
