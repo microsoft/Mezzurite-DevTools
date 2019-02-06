@@ -25,7 +25,7 @@ class Subscriber {
     if (topic == null) {
       throw Error('topic must not be null or undefined');
     }
-    
+
     if (callback == null) {
       throw Error('callback must not be null or undefined');
     }
