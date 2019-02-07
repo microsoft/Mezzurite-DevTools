@@ -11,5 +11,38 @@ exports[`Header.js should render the header 1`] = `
   >
     Mezzurite Developer Tools
   </h1>
+  <button
+    className="header--button"
+    onClick={[Function]}
+  >
+    <i
+      aria-label="Help"
+      className="ms-Icon ms-Icon--Help"
+      title="Help"
+    />
+  </button>
+</header>
+`;
+
+exports[`Header.js should render the header without an onClick handler 1`] = `
+<header
+  className="header"
+  role="banner"
+>
+  <Logo />
+  <h1
+    className="header--text"
+  >
+    Mezzurite Developer Tools
+  </h1>
+  <button
+    className="header--button"
+  >
+    <i
+      aria-label="Help"
+      className="ms-Icon ms-Icon--Help"
+      title="Help"
+    />
+  </button>
 </header>
 `;
