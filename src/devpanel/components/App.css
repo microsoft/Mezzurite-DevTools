@@ -13,6 +13,7 @@
     flex-direction: column;
     height: 100%;
     justify-content: center;
+    position: relative;
     width: 100%;
   }
 
@@ -39,6 +40,5 @@
 @media only screen and (min-width: 1084px) {
   .modal {
     max-width: 1024px;
-    width: 80%;
   }
 }
