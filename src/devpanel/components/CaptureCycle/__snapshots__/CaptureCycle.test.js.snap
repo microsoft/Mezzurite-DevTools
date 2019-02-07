@@ -19,8 +19,22 @@ exports[`CaptureCycle.js should render when there are both insideViewportCompone
           },
         ]
       }
-      heading="Inside Viewport"
-      subheading={false}
+      heading={
+        <div
+          className="capture-cycle--inside-viewport-header"
+        >
+          <h3
+            className="capture-cycle--card-header"
+          >
+            <span
+              className="mobile-hidden"
+            >
+              Components 
+            </span>
+            Inside Viewport
+          </h3>
+        </div>
+      }
     />
     <CaptureCycleSection
       components={
@@ -31,7 +45,18 @@ exports[`CaptureCycle.js should render when there are both insideViewportCompone
           },
         ]
       }
-      heading="Outside Viewport"
+      heading={
+        <h3
+          className="capture-cycle--card-header"
+        >
+          <span
+            className="mobile-hidden"
+          >
+            Components 
+          </span>
+          Outside Viewport
+        </h3>
+      }
     />
   </div>
 </section>
@@ -56,8 +81,22 @@ exports[`CaptureCycle.js should render when there are only insideViewportCompone
           },
         ]
       }
-      heading="Inside Viewport"
-      subheading={false}
+      heading={
+        <div
+          className="capture-cycle--inside-viewport-header"
+        >
+          <h3
+            className="capture-cycle--card-header"
+          >
+            <span
+              className="mobile-hidden"
+            >
+              Components 
+            </span>
+            Inside Viewport
+          </h3>
+        </div>
+      }
     />
   </div>
 </section>
@@ -82,7 +121,18 @@ exports[`CaptureCycle.js should render when there are only outsideViewportCompon
           },
         ]
       }
-      heading="Outside Viewport"
+      heading={
+        <h3
+          className="capture-cycle--card-header"
+        >
+          <span
+            className="mobile-hidden"
+          >
+            Components 
+          </span>
+          Outside Viewport
+        </h3>
+      }
     />
   </div>
 </section>
@@ -107,8 +157,22 @@ exports[`CaptureCycle.js should render with a routeUrl 1`] = `
           },
         ]
       }
-      heading="Inside Viewport"
-      subheading={false}
+      heading={
+        <div
+          className="capture-cycle--inside-viewport-header"
+        >
+          <h3
+            className="capture-cycle--card-header"
+          >
+            <span
+              className="mobile-hidden"
+            >
+              Components 
+            </span>
+            Inside Viewport
+          </h3>
+        </div>
+      }
     />
     <CaptureCycleSection
       components={
@@ -119,7 +183,18 @@ exports[`CaptureCycle.js should render with a routeUrl 1`] = `
           },
         ]
       }
-      heading="Outside Viewport"
+      heading={
+        <h3
+          className="capture-cycle--card-header"
+        >
+          <span
+            className="mobile-hidden"
+          >
+            Components 
+          </span>
+          Outside Viewport
+        </h3>
+      }
     />
   </div>
 </section>
@@ -149,8 +224,22 @@ exports[`CaptureCycle.js should render with a timestamp 1`] = `
           },
         ]
       }
-      heading="Inside Viewport"
-      subheading={false}
+      heading={
+        <div
+          className="capture-cycle--inside-viewport-header"
+        >
+          <h3
+            className="capture-cycle--card-header"
+          >
+            <span
+              className="mobile-hidden"
+            >
+              Components 
+            </span>
+            Inside Viewport
+          </h3>
+        </div>
+      }
     />
     <CaptureCycleSection
       components={
@@ -161,7 +250,18 @@ exports[`CaptureCycle.js should render with a timestamp 1`] = `
           },
         ]
       }
-      heading="Outside Viewport"
+      heading={
+        <h3
+          className="capture-cycle--card-header"
+        >
+          <span
+            className="mobile-hidden"
+          >
+            Components 
+          </span>
+          Outside Viewport
+        </h3>
+      }
     />
   </div>
 </section>
@@ -186,17 +286,32 @@ exports[`CaptureCycle.js should render with a viewportLoadTime 1`] = `
           },
         ]
       }
-      heading="Inside Viewport"
-      subheading={
-        <React.Fragment>
-          Viewport Load Time: 
-          <span
-            className="capture-cycle--statistic"
+      heading={
+        <div
+          className="capture-cycle--inside-viewport-header"
+        >
+          <h3
+            className="capture-cycle--card-header"
           >
-            15.4
-          </span>
-          ms
-        </React.Fragment>
+            <span
+              className="mobile-hidden"
+            >
+              Components 
+            </span>
+            Inside Viewport
+          </h3>
+          <h4
+            className="capture-cycle--viewport-load-time"
+          >
+            Viewport Load Time: 
+            <span
+              className="capture-cycle--statistic"
+            >
+              15.4
+            </span>
+            ms
+          </h4>
+        </div>
       }
     />
     <CaptureCycleSection
@@ -208,7 +323,18 @@ exports[`CaptureCycle.js should render with a viewportLoadTime 1`] = `
           },
         ]
       }
-      heading="Outside Viewport"
+      heading={
+        <h3
+          className="capture-cycle--card-header"
+        >
+          <span
+            className="mobile-hidden"
+          >
+            Components 
+          </span>
+          Outside Viewport
+        </h3>
+      }
     />
   </div>
 </section>
@@ -238,8 +364,22 @@ exports[`CaptureCycle.js should render with both a routeUrl and timestamp 1`] = 
           },
         ]
       }
-      heading="Inside Viewport"
-      subheading={false}
+      heading={
+        <div
+          className="capture-cycle--inside-viewport-header"
+        >
+          <h3
+            className="capture-cycle--card-header"
+          >
+            <span
+              className="mobile-hidden"
+            >
+              Components 
+            </span>
+            Inside Viewport
+          </h3>
+        </div>
+      }
     />
     <CaptureCycleSection
       components={
@@ -250,7 +390,18 @@ exports[`CaptureCycle.js should render with both a routeUrl and timestamp 1`] = 
           },
         ]
       }
-      heading="Outside Viewport"
+      heading={
+        <h3
+          className="capture-cycle--card-header"
+        >
+          <span
+            className="mobile-hidden"
+          >
+            Components 
+          </span>
+          Outside Viewport
+        </h3>
+      }
     />
   </div>
 </section>

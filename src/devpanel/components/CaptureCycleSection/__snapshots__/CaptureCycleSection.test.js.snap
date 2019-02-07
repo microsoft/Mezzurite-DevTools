@@ -28,31 +28,7 @@ exports[`CaptureCycleSection.js should render the capture cycle section with a c
 
 exports[`CaptureCycleSection.js should render the capture cycle section with a heading 1`] = `
 <section>
-  <h3
-    className="capture-cycle--section-header"
-  >
-    heading
-  </h3>
-  <ul
-    className="capture-cycle--components"
-  >
-    <ComponentTiming
-      loadTime={14.2}
-      name="componentName"
-    />
-  </ul>
-</section>
-`;
-
-exports[`CaptureCycleSection.js should render the capture cycle section with a subheading 1`] = `
-<section>
-  <h4
-    className="capture-cycle--section-sub-header"
-  >
-    <span>
-      subheading
-    </span>
-  </h4>
+  heading
   <ul
     className="capture-cycle--components"
   >

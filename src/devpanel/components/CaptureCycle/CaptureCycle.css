@@ -9,6 +9,13 @@
     overflow: auto;
   }
 
+  .capture-cycle--card-header {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 12px 16px;
+    text-align: center;
+  }
+
   .capture-cycle--header {
     font-size: 17px;
     font-weight: 400;
@@ -16,13 +23,39 @@
     text-align: center;
   }
 
+  .capture-cycle--inside-viewport-header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
   .capture-cycle--statistic {
     font-weight: 500;
+  }
+
+  .capture-cycle--viewport-load-time {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 4px 16px;
   }
 }
 
 @media only screen and (min-width: 640px) {
+  .capture-cycle--card-header {
+    font-size: 18px;
+    text-align: start;
+  }
+
   .capture-cycle--header {
     text-align: start;
+  }
+
+  .capture-cycle--inside-viewport-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .capture-cycle--viewport-load-time {
+    font-size: 16px;
   }
 }
