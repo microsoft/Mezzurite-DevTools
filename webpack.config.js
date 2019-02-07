@@ -13,6 +13,7 @@ module.exports = {
     inject: './src/inject/index.js'
   },
   mode: 'development',
+  devtool: 'source-map',
   module: {
     rules: [
       {
