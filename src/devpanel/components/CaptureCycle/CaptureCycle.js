@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { arrayOf, number, shape, string } from 'prop-types';
 
 import './CaptureCycle.css';
@@ -9,11 +9,11 @@ const CaptureCycle = (props) => {
     {props.routeUrl == null ? 'Capture Cycle' : props.routeUrl}
     {props.timestamp != null && <span> at {props.timestamp}:</span>}
   </h2>;
-  const insideViewportHeading = 'Inside Viewport';
-  const insideViewportSubheading = props.viewportLoadTime != null && <Fragment>
-    Viewport Load Time: <span className='capture-cycle--statistic'>{props.viewportLoadTime.toFixed(1)}</span>ms
-  </Fragment>;
-  const outsideViewportHeading = 'Outside Viewport';
+  const insideViewportHeading = <div className='capture-cycle--inside-viewport-header'>
+    <h3 className='capture-cycle--card-header'><span className='mobile-hidden'>Components </span>Inside Viewport</h3>
+    {props.viewportLoadTime != null && <h4 className='capture-cycle--viewport-load-time'>Viewport Load Time: <span className='capture-cycle--statistic'>{props.viewportLoadTime.toFixed(1)}</span>ms</h4>}
+  </div>;
+  const outsideViewportHeading = <h3 className='capture-cycle--card-header'><span className='mobile-hidden'>Components </span>Outside Viewport</h3>;
   const shouldRenderInsideViewportComponents = props.insideViewportComponents != null && props.insideViewportComponents.length > 0;
   const shouldRenderOutsideViewportComponents = props.outsideViewportComponents != null && props.outsideViewportComponents.length > 0;
 
@@ -27,7 +27,6 @@ const CaptureCycle = (props) => {
             captureCycleIndex={props.captureCycleIndex}
             components={props.insideViewportComponents}
             heading={insideViewportHeading}
-            subheading={insideViewportSubheading}
           />
         }
         {shouldRenderOutsideViewportComponents &&

@@ -6,8 +6,7 @@ import './CaptureCycleSection.css';
 
 const CaptureCycleSection = (props) => (
   props != null && props.components != null && props.components.length > 0 && <section>
-    {props.heading != null && <h3 className='capture-cycle--section-header'>{props.heading}</h3>}
-    {props.subheading != null && <h4 className='capture-cycle--section-sub-header'>{props.subheading}</h4>}
+    {props.heading != null && props.heading}
     <ul className='capture-cycle--components'>
       {props.components.map((component, timingIndex) =>
         <ComponentTiming
@@ -26,8 +25,7 @@ CaptureCycleSection.propTypes = {
     componentLoadTime: number,
     componentName: string
   })),
-  heading: string,
-  subheading: node
+  heading: node
 };
 
 export default CaptureCycleSection;

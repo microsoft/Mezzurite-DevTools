@@ -13,7 +13,7 @@
   height: 100%;
 }
 
-@media only screen and (max-width: 539px) {
+@media only screen and (max-width: 640px) {
   .mobile-hidden {
     display: none;
   }

@@ -3,28 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    margin: 16px;
+    margin: 8px 16px;
     padding: 0;
-  }
-
-  .capture-cycle--section-header {
-    font-size: 17px;
-    font-weight: 600;
-    margin: 16px;
-    text-align: center;
-  }
-
-  .capture-cycle--section-sub-header {
-    font-size: 16px;
-    font-weight: 400;
-    margin: 8px 16px 0;
-    text-align: center;
-  }
-}
-
-@media only screen and (min-width: 640px) {
-  .capture-cycle--section-header,
-  .capture-cycle--section-sub-header {
-    text-align: left;
   }
 }

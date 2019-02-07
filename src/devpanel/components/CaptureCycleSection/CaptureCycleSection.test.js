@@ -62,18 +62,4 @@ describe('CaptureCycleSection.js', () => {
       />);
     expect(tree).toMatchSnapshot();
   });
-
-  it('should render the capture cycle section with a subheading', () => {
-    const tree = renderer
-      .render(<CaptureCycleSection
-        components={[
-          {
-            componentLoadTime: 14.2,
-            componentName: 'componentName'
-          }
-        ]}
-        subheading={<span>subheading</span>}
-      />);
-    expect(tree).toMatchSnapshot();
-  });
 });
