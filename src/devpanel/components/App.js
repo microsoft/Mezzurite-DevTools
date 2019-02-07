@@ -104,7 +104,7 @@ class App extends Component {
   render () {
     return (
       <div className='app'>
-        <Header />
+        <Header onClick={this.onHelpDialogOpen} />
         <Main
           applicationLoadTime={this.state.applicationLoadTime}
           captureCycles={this.state.captureCycles}
