@@ -88,7 +88,7 @@ function formatTimingsEvent (event) {
 
   let routeUrl = null;
 
-  if (event.RouteUrl != null && event.RouteUrl !== '/') {
+  if (event.RouteUrl != null) {
     routeUrl = event.RouteUrl;
   }
 

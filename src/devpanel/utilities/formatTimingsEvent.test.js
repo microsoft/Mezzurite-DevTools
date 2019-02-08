@@ -392,10 +392,6 @@ describe('formatTimingsEvent.js', () => {
       expect(formatTimingsEvent({ RouteUrl: undefined }).routeUrl).toBeNull();
     });
 
-    it('should return null for routeUrl when the RouteUrl property is just a backslash', () => {
-      expect(formatTimingsEvent({ RouteUrl: '/' }).routeUrl).toBeNull();
-    });
-
     it('should return the routeUrl', () => {
       expect(formatTimingsEvent({ RouteUrl: '/home' }).routeUrl).toBe('/home');
     });
