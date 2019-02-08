@@ -14,5 +14,13 @@ To install, download the latest [release](https://github.com/Microsoft/Mezzurite
 
 Navigate to [chrome://extensions](chrome://extensions "chrome://extensions") and select `Load unpacked`, selecting the `/dist` folder output from the build.
 
+## Mezzurite Ecosystem
+| Projects                                                                                          |                                                                            |
+| ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| [ApplicationInsights-JS-Mezzurite](https://github.com/Microsoft/ApplicationInsights-JS-Mezzurite) | Application insights extension of Mezzurite                                |
+| [Mezzurite](https://github.com/Microsoft/Mezzurite)                                               | Base SDK for Mezzurite with Angular, AngularJS and React integration       |
+| [Mezzurite DevTools](https://github.com/Microsoft/Mezzurite-DevTools)                             | See Mezzurite metrics being captured with a browser extension              |
+| [VSCode Mezzurite](https://github.com/Microsoft/vscode-mezzurite)                                 | Check which components and modules are instrumented within VS Code         |
+
 ## Contributions
 [To read about contributing to this repo, click here](CONTRIBUTING.md)
