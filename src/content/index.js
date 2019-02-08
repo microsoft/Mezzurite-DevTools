@@ -6,18 +6,14 @@ import { forwardTimingEvent, sendSimpleMessage } from './messaging';
 import injectScript from './injectScript';
 
 document.addEventListener('MezzuriteFound', () => {
-  console.log('CS: Got an event: MezzuriteFound');
   sendSimpleMessage('mezzuriteFound');
 });
 
 document.addEventListener('MezzuriteNotFound', () => {
-  console.log('CS: Got an event: MezzuriteNotFound');
   sendSimpleMessage('mezzuriteNotFound');
 });
 
 document.addEventListener('MezzuriteTiming_toExtension', timingEvent => {
-  console.log('CS: Got a timing event!');
-  console.log(timingEvent);
   forwardTimingEvent(timingEvent);
 });
 

@@ -11,7 +11,5 @@ function createPanel () {
   const title = 'Mezzurite';
   const iconPath = null;
   const pagePath = 'devpanel.html'; // Relative path is apparently determined from the manifest.json's position
-  chrome.devtools.panels.create(title, iconPath, pagePath, function (panel) {
-    console.log('DT: The Mezzurite panel in DevTools was created!');
-  });
+  chrome.devtools.panels.create(title, iconPath, pagePath);
 }

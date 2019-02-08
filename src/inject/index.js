@@ -26,7 +26,6 @@ function initTimingEventForwarding () {
     // No access to chrome dev tools or chrome APIs
     // Need to forward these messages via some DOM element
     // to the content script that injected this function in the first place.
-    console.log('IS: Mezzurite Timing event was detected! Forwarding to content script.');
     forwardTimingEvent(timingEvent);
   });
 }
