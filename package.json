@@ -1,6 +1,6 @@
 {
   "name": "mezzurite-devtools",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A Chrome DevTools extension for helping developers onboard onto and debug their Mezzurite setup",
   "main": "index.js",
   "dependencies": {
