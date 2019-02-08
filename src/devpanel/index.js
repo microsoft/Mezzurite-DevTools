@@ -8,13 +8,6 @@ import App from './components/App';
 import './fabric.min.css';
 import './index.css';
 
-// The only reason for using React Router DOM is to have ALT for the chrome extension
-// MemoryRouter is used because this is not a traditional browser environment
-ReactDOM.render((
-  // <MemoryRouter>
-  <App />
-// </MemoryRouter>
-), document.getElementById('root')
-);
+ReactDOM.render((<App />), document.getElementById('root'));
 
 cssVars();
