@@ -46,7 +46,8 @@
     "webpack-cli": "^3.1.1"
   },
   "scripts": {
-    "build": "webpack --config ./webpack.config.js --mode development",
+    "build:dev": "webpack --config ./webpack.config.js --env dev",
+    "build:prod": "webpack --config ./webpack.config.js --env prod",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint \"./src/devpanel/**/*.css\"",
     "lint:js": "eslint ./src",
