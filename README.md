@@ -17,7 +17,7 @@ Navigate to `chrome://extensions` and select `Load unpacked`, selecting the `/di
 ## Mezzurite Ecosystem
 | Projects                                                                                          |                                                                            |
 | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [ApplicationInsights-JS-Mezzurite](https://github.com/Microsoft/ApplicationInsights-JS-Mezzurite) | Application insights extension of Mezzurite                                |
+| [ApplicationInsights-JS-Mezzurite](https://github.com/Microsoft/ApplicationInsights-JS-Mezzurite) | [Application insights](https://github.com/Microsoft/ApplicationInsights-JS) extension of Mezzurite                                |
 | [Mezzurite](https://github.com/Microsoft/Mezzurite)                                               | Base SDK for Mezzurite with Angular, AngularJS and React integration       |
 | [Mezzurite DevTools](https://github.com/Microsoft/Mezzurite-DevTools)                             | See Mezzurite metrics being captured with a browser extension              |
 | [VSCode Mezzurite](https://github.com/Microsoft/vscode-mezzurite)                                 | Check which components and modules are instrumented within VS Code         |
