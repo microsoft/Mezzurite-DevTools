@@ -1,13 +1,10 @@
 @media only screen {
-  .logo-inner {
-    fill: var(--color-yellow);
-  }
-
   .logo {
-    background-color: var(--color-gray-darkest);
     border-radius: 16px;
+    height: 32px;
     margin-right: 8px;
     padding: 2px;
+    width: 32px;
   }
 }
 
