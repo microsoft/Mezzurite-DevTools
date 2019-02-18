@@ -1,5 +1,7 @@
 # Mezzurite Developer Tools
 
+[![Build Status](https://dev.azure.com/ms/Mezzurite/_apis/build/status/Microsoft.Mezzurite-DevTools?branchName=master)](https://dev.azure.com/ms/Mezzurite/_build/latest?definitionId=46&branchName=master)
+
 Mezzurite Developer Tools allow you to view Mezzurite metrics for any application being instrumented with [Mezzurite](https://github.com/Microsoft/Mezzurite "Mezzurite").
 
 <center>
