@@ -6,6 +6,8 @@
 pr:
 - master
 
+trigger: none
+
 pool:
   vmImage: 'Ubuntu-16.04'
 
@@ -18,6 +20,10 @@ steps:
 - script: |
     npm install
   displayName: 'Install npm dependencies'
+
+- script: |
+    npm audit
+  displayName: 'Auditing dependencies'
 
 - script: |
     npm run lint
